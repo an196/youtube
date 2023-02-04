@@ -1,0 +1,45 @@
+$primary-text: #f1f1f1;
+
+.item-container{
+    width: 204px;
+    display: flex;
+    flex-direction: column;
+}
+.item-list{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.item-list:hover{
+    background-color: rgba($color: #fff, $alpha: 0.3);
+}
+
+.item-list-block{
+    margin-right: 12px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+
+
+.item-menu-label{
+    color: $primary-text;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.item-menu-icon{
+    color: $primary-text;
+    width: 24px;
+    height: 24px;
+    margin-right: 24px;
+}
+
+//overide
+.mdc-list-item.mdc-list-item--with-one-line{
+    height: 40px;
+}

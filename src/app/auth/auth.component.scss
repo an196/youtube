@@ -1,0 +1,28 @@
+$primary: #0f0f0f;
+$primary-text: #f1f1f1;
+
+//override default class of material
+.mat-drawer-side{
+  border: 0px;
+}
+
+//css
+
+.hero-container {
+  width: 100%;
+  padding: 0px;
+  height: 100vh;
+}
+
+.hero-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-sidenav {
+  padding: 0px;
+  width: 240px;
+  background-color: $primary;
+}
