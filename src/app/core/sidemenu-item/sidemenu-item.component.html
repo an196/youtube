@@ -1,20 +1,8 @@
 <mat-nav-list class="item-container">
-   <mat-list-item class="item-list">
+   <mat-list-item class="item-list" *ngFor="let menu of menus">
       <div class="item-list-block">
-         <mat-icon class="item-menu-icon" svgIcon="home" aria-hidden="false" aria-label="home"></mat-icon>
-         <a href="..." class="item-menu-label">Trang chủ</a>
-      </div>
-   </mat-list-item>
-   <mat-list-item class="item-list">
-      <div class="item-list-block">
-         <mat-icon class="item-menu-icon" svgIcon="short" aria-hidden="false" aria-label="short"></mat-icon>
-         <a href="..." class="item-menu-label">Shorts</a>
-      </div>
-   </mat-list-item>
-   <mat-list-item class="item-list">
-      <div class="item-list-block">
-         <mat-icon class="item-menu-icon" svgIcon="chanel" aria-hidden="false" aria-label="chanel"></mat-icon>
-         <a href="..." class="item-menu-label">Kênh Đăng ký</a>
+         <mat-icon class="item-menu-icon" svgIcon={{menu.icon}} aria-hidden="false"></mat-icon>
+         <a href="..." class="item-menu-label">{{menu.titleVI}}</a>
       </div>
    </mat-list-item>
 </mat-nav-list>

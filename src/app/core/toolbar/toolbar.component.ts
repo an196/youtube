@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 
@@ -54,9 +54,16 @@ const LOGO_ICON =
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })
-export class ToolbarComponent {
+export class ToolbarComponent implements OnInit{
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIconLiteral('threeline', sanitizer.bypassSecurityTrustHtml(THREELINE_ICON));
     iconRegistry.addSvgIconLiteral('logo', sanitizer.bypassSecurityTrustHtml(LOGO_ICON));
   }
+
+  @Input() sidemenu: any;  
+
+  ngOnInit() {
+
+  }
+
 }

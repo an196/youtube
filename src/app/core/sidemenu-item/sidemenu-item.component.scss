@@ -6,8 +6,9 @@ $primary-text: #f1f1f1;
     flex-direction: column;
 }
 .item-list{
-    width: 100%;
+    width: 214px;
     border-radius: 10px;
+    flex: none;
 }
 
 .item-list:hover{
@@ -37,9 +38,11 @@ $primary-text: #f1f1f1;
     width: 24px;
     height: 24px;
     margin-right: 24px;
+    flex: none;
 }
 
 //overide
 .mdc-list-item.mdc-list-item--with-one-line{
     height: 40px;
 }
+
