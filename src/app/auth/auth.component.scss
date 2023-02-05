@@ -7,11 +7,17 @@ $primary-text: #f1f1f1;
 }
 
 //css
+.auth-container{
+  width: 100%;
+  padding: 0px;
+  height: 100vh;
+  background-color: $primary;
+}
 
 .hero-container {
   width: 100%;
   padding: 0px;
-  height: 100vh;
+  height: calc(100vh - 56px);
 }
 
 .hero-sidenav-content {

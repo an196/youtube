@@ -1,11 +1,15 @@
-<mat-drawer-container class="hero-container" autosize >
-  <mat-drawer #drawer class="hero-sidenav" mode="side" opened>
-    <app-sidemenu></app-sidemenu>
-  </mat-drawer>
+<section class="auth-container">
+  <app-toolbar></app-toolbar>
+  <mat-drawer-container class="hero-container" autosize>
 
-  <div class="hero-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
-  </div>
-</mat-drawer-container>
+    <mat-drawer #drawer class="hero-sidenav" mode="side" opened>
+      <app-sidemenu></app-sidemenu>
+    </mat-drawer>
+
+    <div class="hero-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+    </div>
+  </mat-drawer-container>
+</section>

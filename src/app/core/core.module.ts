@@ -4,14 +4,19 @@ import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { SidemenuItemComponent } from './sidemenu-item/sidemenu-item.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatBadgeModule} from '@angular/material/badge';
 
 //icon
-import { SharedModule } from 'app/shared/shared.module'; 
+import { SharedModule } from 'app/shared/shared.module';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [SidemenuComponent, SidemenuItemComponent],
-  imports: [CommonModule, MatListModule, MatIconModule, SharedModule],
-  exports: [SidemenuComponent, SidemenuItemComponent],
+  declarations: [SidemenuComponent, SidemenuItemComponent, ToolbarComponent, SearchbarComponent, SidebarComponent],
+  imports: [CommonModule, MatListModule, MatIconModule, SharedModule, MatToolbarModule, MatBadgeModule],
+  exports: [SidemenuComponent, SidemenuItemComponent,ToolbarComponent, SearchbarComponent, SidebarComponent],
   providers: [],
 })
-export class CoreModule {}
+export class CoreModule { }
