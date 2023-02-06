@@ -1,0 +1,21 @@
+export const chips = [
+  { name: 'all', titleVi: 'Tất cả', link: '' },
+  { name: 'music', titleVi: 'Âm nhạc', link: '' },
+  { name: 'news', titleVi: 'Tin tức', link: '' },
+  { name: 'combination', titleVi: 'Danh sách kết hợp', link: '' },
+  { name: 'live', titleVi: 'Trực tiếp', link: '' },
+  { name: 'game', titleVi: 'Trò chơi', link: '' },
+  { name: 'cartoon', titleVi: 'Hoạt họa', link: '' },
+  { name: 'situationComedy', titleVi: 'Hài kịch tình huống', link: '' },
+  {
+    name: 'actionAdventureGame',
+    titleVi: 'Trò chơi hành động phiêu lưu',
+    link: '',
+  },
+  { name: 'pet', titleVi: 'Thú cưng', link: '' },
+  { name: 'foodball', titleVi: 'Bóng đá', link: '' },
+  { name: 'recentlyUpload', titleVi: 'Mới tải lên gần đây', link: '' },
+  { name: 'watched', titleVi: 'Đã xem', link: '' },
+  { name: 'post', titleVi: 'Bài đăng', link: '' },
+  { name: 'newProposal', titleVi: 'Đề xuất mới', link: '' },
+];

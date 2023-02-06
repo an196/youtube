@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchbarComponent } from './searchbar.component';
+import { ChipHeaderComponent } from './chip-header.component';
 
-describe('SearchbarComponent', () => {
-  let component: SearchbarComponent;
-  let fixture: ComponentFixture<SearchbarComponent>;
+describe('ChipHeaderComponent', () => {
+  let component: ChipHeaderComponent;
+  let fixture: ComponentFixture<ChipHeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SearchbarComponent],
+      declarations: [ChipHeaderComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SearchbarComponent);
+    fixture = TestBed.createComponent(ChipHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

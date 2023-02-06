@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { menus, menus2, menus3,menus4,menus5 } from './menu-element';
+import { menus, menus2, menus3, menus4, menus5 } from './menu-element';
 
 @Component({
   selector: 'app-sidemenu',

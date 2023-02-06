@@ -1,0 +1,25 @@
+<mat-chip-listbox aria-label="tag selection" class="chip-listbox">
+  <div #chipContainer class="chip-container">
+    <div class="block-overlay-left" *ngIf="activeLeftBtn">
+      <div class="btn-container">
+        <button aria-label="btn-block" class="btn-block" (click)="onButtonClick('left')">
+          <mat-icon class="btn-icon">keyboard_arrow_left</mat-icon>
+        </button>
+      </div>
+      <div class="linear-background-left">
+      </div>
+    </div>
+    <div class="chip-item-container" #chipItemContainer>
+      <mat-chip mat-basic-chip class="chip-item" *ngFor="let chip of chips">{{chip.titleVi}}</mat-chip>
+    </div>
+    <div class="block-overlay-right" *ngIf="activeRightBtn">
+      <div class="linear-background-right">
+      </div>
+      <div class="btn-container">
+        <button aria-label="btn-block" class="btn-block" (click)="onButtonClick('right')">
+          <mat-icon class="btn-icon">keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</mat-chip-listbox>

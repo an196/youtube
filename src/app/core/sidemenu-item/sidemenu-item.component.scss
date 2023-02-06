@@ -1,48 +1,45 @@
 $primary-text: #f1f1f1;
 
-.item-container{
-    width: 204px;
-    display: flex;
-    flex-direction: column;
+.item-container {
+  width: 204px;
+  display: flex;
+  flex-direction: column;
 }
-.item-list{
-    width: 214px;
-    border-radius: 10px;
-    flex: none;
-}
-
-.item-list:hover{
-    background-color: rgba($color: #fff, $alpha: 0.3);
+.item-list {
+  width: 214px;
+  border-radius: 10px;
+  flex: none;
 }
 
-.item-list-block{
-    margin-right: 12px;
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
+.item-list:hover {
+  background-color: rgba($color: #fff, $alpha: 0.3);
 }
 
-
-
-.item-menu-label{
-    color: $primary-text;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
+.item-list-block {
+  margin-right: 12px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
 }
 
-.item-menu-icon{
-    color: $primary-text;
-    width: 24px;
-    height: 24px;
-    margin-right: 24px;
-    flex: none;
+.item-menu-label {
+  color: $primary-text;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.item-menu-icon {
+  color: $primary-text;
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+  flex: none;
 }
 
 //overide
-.mdc-list-item.mdc-list-item--with-one-line{
-    height: 40px;
+.mdc-list-item.mdc-list-item--with-one-line {
+  height: 40px;
 }
-

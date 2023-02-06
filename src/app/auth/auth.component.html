@@ -1,9 +1,11 @@
 <section class="auth-container">
   <app-toolbar [sidemenu]="sidemenu"></app-toolbar>
   <mat-drawer-container class="hero-container" autosize>
-
     <mat-drawer #sidemenu class="hero-sidenav" mode="side" opened>
       <app-sidemenu></app-sidemenu>
     </mat-drawer>
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
   </mat-drawer-container>
 </section>

@@ -1,53 +1,52 @@
-.toolbar-container{
-    width: 100%;
-    height: 56px;
-    background: #0f0f0f;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.toolbar-container {
+  width: 100%;
+  height: 56px;
+  background: #0f0f0f;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.toolbar-item{
-    display: flex;
-    align-items: center;
+.toolbar-item {
+  display: flex;
+  align-items: center;
 }
 
-.toolbar-btn{
-    border: none;
-    background: transparent;
-    width: 40px;
-    height: 40px;
-    border-radius:  50%;
-    cursor: pointer;
+.toolbar-btn {
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.toolbar-btn:hover{
-    background-color: rgba($color: #fff, $alpha: 0.2);
-    
+.toolbar-btn:hover {
+  background-color: rgba($color: #fff, $alpha: 0.2);
 }
 
-.toolbar-icon{
-    background: transparent;
-    fill: #f1f1f1;
+.toolbar-icon {
+  background: transparent;
+  fill: #f1f1f1;
 }
 
-.logo-icon-container{
-    width: 120px;
-    height: 56px;
-    padding: 18px 14px 18px 16px;
-    font-size: 10px;
+.logo-icon-container {
+  width: 120px;
+  height: 56px;
+  padding: 18px 14px 18px 16px;
+  font-size: 10px;
 }
 
-.logo-icon{
-    width: 90px;
-    height: 20px;
-    cursor: pointer;
+.logo-icon {
+  width: 90px;
+  height: 20px;
+  cursor: pointer;
 }
 
-.logo-label{
-    font-size: 10px;
-    color: #aaa;
-    height: 44px;
-    margin-left: -10px;
-    margin-top: -6px;
+.logo-label {
+  font-size: 10px;
+  color: #aaa;
+  height: 44px;
+  margin-left: -10px;
+  margin-top: -6px;
 }
