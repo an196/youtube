@@ -6,6 +6,7 @@ $extra-extra-large: 1536px;
 
 .dashboard-container {
   background-color: $primary;
+  width: 100%;
 }
 
 .dashboard-content-container{
@@ -33,3 +34,9 @@ $extra-extra-large: 1536px;
   
 }
 
+
+//override
+::ng-deep .ng-star-inserted{
+  max-width: 100%;
+  width: fit-content;
+}

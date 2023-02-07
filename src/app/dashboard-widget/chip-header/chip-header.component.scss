@@ -3,16 +3,38 @@ $primary: #0f0f0f;
 
 .chip-listbox{
   position: relative;
+  
+  .chip-container {
+    width: 100%;
+    height: 56px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    color: $primary;
+  
+    .block-overlay-left{
+      // opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: row;
+    }
+    
+    .block-overlay-right{
+      justify-content: flex-end;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      flex-direction: row;
+    }
+  }
 }
 
-.chip-container {
-  width: 100%;
-  height: 56px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  color: $primary;
-}
+
 
 .chip-item {
   border-radius: 8px;
@@ -50,11 +72,6 @@ $primary: #0f0f0f;
   margin-left: 24px;
 }
 
-// .chip-item:hover {
-//   background-color: rgba($color: #fff, $alpha: 0.2);
-//   cursor: pointer;
-// }
-
 .btn-container{
   color: $primary-text;
   cursor: pointer;
@@ -69,24 +86,7 @@ $primary: #0f0f0f;
   align-items: center;
 }
 
-.block-overlay-left{
-  // opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  display: flex;
-  flex-direction: row;
-}
 
-.block-overlay-right{
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 10;
-  display: flex;
-  flex-direction: row;
-}
 
 .linear-background-left{
   width: 56px;
