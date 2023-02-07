@@ -10,7 +10,10 @@
       </div>
     </div>
     <div class="chip-item-container" #chipItemContainer>
-      <mat-chip mat-basic-chip class="chip-item" *ngFor="let chip of chips">{{chip.titleVi}}</mat-chip>
+      <mat-chip mat-basic-chip class="chip-item" *ngFor="let chip of chips" 
+        [ngClass]="{'chip-item-active': chip.opened, 'chip-item-hover': !chip.opened}">
+        {{chip.titleVi}}
+      </mat-chip>
     </div>
     <div class="block-overlay-right" *ngIf="activeRightBtn">
       <div class="linear-background-right">

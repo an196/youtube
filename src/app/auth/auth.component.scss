@@ -6,6 +6,14 @@ $primary-text: #f1f1f1;
   border: 0px;
 }
 
+::ng-deep .mat-drawer-inner-container::-webkit-scrollbar {
+  display: none;
+}
+
+::ng-deep .mat-drawer-inner-container:hover::-webkit-scrollbar {
+  display: block;
+}
+
 //css
 .auth-container {
   width: 100%;

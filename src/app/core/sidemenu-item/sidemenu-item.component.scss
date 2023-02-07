@@ -11,6 +11,10 @@ $primary-text: #f1f1f1;
   flex: none;
 }
 
+.item-list.item-list-active {
+  background-color: rgba($color: #fff, $alpha: 0.1);
+}
+
 .item-list:hover {
   background-color: rgba($color: #fff, $alpha: 0.3);
 }

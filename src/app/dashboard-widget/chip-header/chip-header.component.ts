@@ -8,7 +8,6 @@ import { chips } from './element';
 })
 export class ChipHeaderComponent implements AfterViewInit {
   @ViewChild('chipContainer', { static: true }) chipContainer!: ElementRef;
-  @ViewChild('chipItemContainer', { static: true }) chipItemContainer!: ElementRef;
 
   public chips = chips;
 

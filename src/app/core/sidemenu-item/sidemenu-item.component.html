@@ -1,5 +1,5 @@
 <mat-nav-list class="item-container">
-  <mat-list-item class="item-list" *ngFor="let menu of menus">
+  <mat-list-item class="item-list" *ngFor="let menu of menus" [ngClass]="{'item-list-active': menu.opened == true}" >
     <div class="item-list-block">
       <mat-icon
         class="item-menu-icon"

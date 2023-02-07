@@ -15,7 +15,7 @@ $primary: #0f0f0f;
 }
 
 .chip-item {
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: rgba($color: #fff, $alpha: 0.1);
   color: $primary-text;
   padding-left: 12px;
@@ -30,6 +30,16 @@ $primary: #0f0f0f;
   cursor: pointer !important;
 }
 
+.chip-item-active{
+  background-color: rgba($color: #fff, $alpha: 1);
+  color: $primary;
+}
+
+.chip-item-hover:hover{
+  background-color: rgba($color: #fff, $alpha: 0.2);
+  cursor: pointer;
+}
+
 .chip-item-container{
   width: fit-content;
   display: flex;
@@ -40,10 +50,10 @@ $primary: #0f0f0f;
   margin-left: 24px;
 }
 
-.chip-item:hover {
-  background-color: rgba($color: #fff, $alpha: 0.2);
-  cursor: pointer;
-}
+// .chip-item:hover {
+//   background-color: rgba($color: #fff, $alpha: 0.2);
+//   cursor: pointer;
+// }
 
 .btn-container{
   color: $primary-text;
