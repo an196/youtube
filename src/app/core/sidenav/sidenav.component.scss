@@ -1,0 +1,48 @@
+$primary: #0f0f0f;
+$primary-text: #f1f1f1;
+
+.sidenav-container{
+    width: 72px;
+    flex: none;
+    height: 100vh;
+    background-color: $primary;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    .mini-guide{
+        width: 67px;
+        height: 74px;
+        padding-top: 14px;
+        padding-bottom: 16px;
+        cursor: pointer;
+
+        .mini-guide-entry{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .guide-entry-icon{
+                width: 24px;
+                height: 24px;
+                color: $primary-text;
+                margin-bottom: 6px;
+            }
+
+            .guide-entry-title{
+                color: $primary-text;
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 14px;
+                text-decoration-thickness: auto;
+                text-overflow: ellipsis;
+                text-size-adjust: 100%;
+            }
+        }
+
+        &:hover{
+            background-color: rgba($color: #fff, $alpha: 0.1);
+            border-radius: 10%;
+        }
+    }
+}

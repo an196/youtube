@@ -1,11 +1,16 @@
 <section class="auth-container">
   <app-toolbar [sidemenu]="sidemenu"></app-toolbar>
   <mat-drawer-container class="hero-container" autosize>
-    <mat-drawer #sidemenu class="hero-sidenav" mode="side" opened>
+    <mat-drawer #sidemenu class="hero-sidemenu" mode="side" opened>
       <app-sidemenu></app-sidemenu>
     </mat-drawer>
+
     <mat-drawer-content>
-      <router-outlet></router-outlet>
+      <div class="hero-content">
+        <app-sidenav *ngIf="!sidemenu.opened"></app-sidenav>
+        <router-outlet></router-outlet>
+      </div>
+      
     </mat-drawer-content>
   </mat-drawer-container>
 </section>

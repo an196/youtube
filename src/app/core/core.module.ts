@@ -12,6 +12,7 @@ import { SharedModule } from 'app/shared/shared.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     ToolbarComponent,
     SearchbarComponent,
     SidebarComponent,
+    SidenavComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     ToolbarComponent,
     SearchbarComponent,
     SidebarComponent,
+    SidenavComponent,
   ],
   providers: [],
 })
