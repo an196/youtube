@@ -1,17 +1,11 @@
-<section class="dashboard-container">
+<section class="dashboard-container"  (window:resize)="onResize($event)">
   <app-chip-header></app-chip-header>
     <div class="dashboard-content-container">
       <section class="dashboard-content">
-        <app-dashcard></app-dashcard>
-        <app-dashcard></app-dashcard>
-        <app-dashcard></app-dashcard>
-        <app-dashcard></app-dashcard>
+        <app-dashcard *ngFor="let i of numberCard"></app-dashcard>
       </section>
       <section class="dashboard-content">
-        <app-dashcard></app-dashcard>
-        <app-dashcard></app-dashcard>
-        <app-dashcard></app-dashcard>
-        <app-dashcard></app-dashcard>
+        <app-dashcard *ngFor="let i of numberCard"></app-dashcard>
       </section>
     </div>
 </section>

@@ -1,7 +1,7 @@
-<section class="auth-container">
+<section class="auth-container" (window:resize)="onResize($event)">
   <app-toolbar [sidemenu]="sidemenu"></app-toolbar>
   <mat-drawer-container class="hero-container" autosize>
-    <mat-drawer #sidemenu class="hero-sidemenu" mode="side" opened>
+    <mat-drawer #sidemenu class="hero-sidemenu" mode="side" [opened]="openedSideMenu">
       <app-sidemenu></app-sidemenu>
     </mat-drawer>
 

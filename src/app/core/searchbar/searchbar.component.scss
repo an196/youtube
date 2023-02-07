@@ -1,5 +1,5 @@
 .searchbar-container {
-  width: 728px;
+  max-width: fit-content;
   height: 40px;
   display: flex;
   flex-direction: row;
@@ -27,8 +27,9 @@
   // border: 1px solid #065fd4;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  width: 572px;
+  max-width: 572px;
   height: 100%;
+  margin-right: 16px;
 }
 
 .searchform-icon {
@@ -46,6 +47,10 @@
 
 .searchform-input {
   width: 487px;
+
+  @media screen and (max-width: 1170px ) {
+    width: 100%;
+  }
 }
 
 .searchform-input input {
