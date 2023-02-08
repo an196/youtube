@@ -16,6 +16,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { WatchPrimaryComponent } from './watch-primary/watch-primary.component';
 import { WatchSecondComponent } from './watch-second/watch-second.component';
 import { WatchWidgetModule } from 'app/watch-widget/watch-widget.module';
+import { VgCoreModule } from '@videogular/ngx-videogular/core'; 
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { WatchWidgetModule } from 'app/watch-widget/watch-widget.module';
     SharedModule,
     MatToolbarModule,
     MatBadgeModule,
-    WatchWidgetModule
+    WatchWidgetModule,
+    VgCoreModule
   ],
   exports: [
     SidemenuComponent,

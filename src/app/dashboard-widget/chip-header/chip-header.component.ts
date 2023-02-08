@@ -22,6 +22,7 @@ export class ChipHeaderComponent implements AfterViewInit {
   onResize() {
     this.resizeWorks();
   }
+
   ngAfterViewInit() {
   }
 
@@ -34,7 +35,6 @@ export class ChipHeaderComponent implements AfterViewInit {
     this.chipContainer.nativeElement.scrollTo({ left: scrollTo, behavior: 'smooth' });
     scrollTo < 0 ? this.activeLeftBtn = false :  this.activeLeftBtn = true;
     scrollTo  >= widthContainer ? this.activeRightBtn = false :  this.activeRightBtn = true;
-    console.log(widthContainer)
   }
 
   private resizeWorks(): void {

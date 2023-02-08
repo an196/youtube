@@ -1,12 +1,76 @@
-<section class="watch-primary-container">
+<section class="watch-primary-container" (window:resize)="onResize($event)">
     <div class="primary-inner">
         <div class="player">
-            <div class="palyer-media">
-                <img src="https://i.ytimg.com/vi/Vi_kXNcXolY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDpdRsbjzkxnpZCiKwwZ2aACjJvrg" alt="">
+            <div class="player-media" #playerMedia>
+                <!-- <img src="https://i.ytimg.com/vi/Vi_kXNcXolY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDpdRsbjzkxnpZCiKwwZ2aACjJvrg" alt=""> -->
+                <!-- <vg-player>
+                    <video autoplay #media [vgMedia]="$any(media)" id="singleVideo" preload="auto" [src]="source" controls>
+        
+                    </video>
+                </vg-player> -->
+                <iframe width="100%" [height]="heightMediaFrame" 
+                    src="https://www.youtube.com/embed/U_6xHKGf3Ho" 
+                    allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen"
+                    msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen"
+                    webkitallowfullscreen="webkitallowfullscreen">
+                </iframe>
+
             </div>
         </div>
         <div class="below">
+            <div class="metadata">
+                <div class="metadata-title">
+                    <h3>THỎ BẢY MÀU - THẦN BÀI MIỀN TÂY | Hoạt Hình Tết 2023</h3>
+                </div>
+                <div class="metadata-top-row">
+                    <div class="top-row-left">
+                        <a href="">
+                            <div>
+                                <img src="https://yt3.ggpht.com/nUn1DIIVQtqxdI5ubE_O8VhmT38NTA_7vIhS__sZsJfunY1uheawMvatoP9WMKu9nF8thJHK1g=s48-c-k-c0x00ffffff-no-rj" alt="" width="40px" height="40px">
+                            </div>
+                        </a>
+                        <div class="upload-info">
+                            <div class="channel-info">
+                                <a href="#" >
+                                    <h2 class="channel-name">THỎ BẢY MÀU</h2>
+                                </a>
+                            </div>
+                            <div class="channel-count">
+                                <span>1,63 Tr người đăng ký</span>
+                            </div>
+                        </div>
+                        <button class="subcribde-btn"><span>Đăng ký</span></button>
+                    </div>
+                    <div class="top-row-right">
+                        <div class="like-dislike-button">
+                            <button class="shape-btn">
+                                <mat-icon class="shape-btn-thumbup" svgIcon="thumbup"></mat-icon>
+                                <span>2,6N</span>
+                            </button>
+                            <div class="ldl-divider"></div>
+                            <button class="shape-btn">
+                                <mat-icon svgIcon="thumbdown"></mat-icon>
+                            </button>
+                        </div>
+                       
+                        <button class="trr-btn shape-btn">
+                            <mat-icon svgIcon="share"></mat-icon>
+                            <span>Chia sẻ</span>
+                        </button>
+                        <button class="trr-btn shape-btn">
+                            <mat-icon svgIcon="scissor"></mat-icon>
+                            <span>Tạo đoạn video</span>
+                        </button>
+                        <button class="trr-btn shape-btn">
+                            <mat-icon svgIcon="threelineplus"></mat-icon>
+                            <span>Lưu</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="metadata-bottom-row">
 
+                </div>
+            </div>
         </div>
     </div>
 </section>

@@ -1,26 +1,195 @@
 $primary: #0f0f0f;
 $primary-text: #f1f1f1;
 
-.watch-primary-container{
+.watch-primary-container {
     width: 100%;
     background-color: $primary;
     padding-left: 24px;
     padding-right: 24px;
     padding-top: 24px;
 
-    .primary-inner{
+    .primary-inner {
         width: 100%;
 
-        .player{
+        .player {
             width: 100%;
 
-            .palyer-media{
+            .player-media {
                 width: 100%;
-                
-                img{
+
+                img {
                     object-fit: contain;
+                }
+
+                iframe {
+                    border: none;
                 }
             }
         }
-    }   
+
+        .below {
+            width: 100%;
+            margin-top: 12px;
+            margin-bottom: 24px;
+
+            .metadata {
+                width: 100%;
+
+
+                .metadata-title h3 {
+                    color: rgb(241, 241, 241);
+                    font-size: 20px;
+                    font-weight: 600;
+                    line-height: 28px;
+                    text-size-adjust: 100%;
+                    word-break: break-all;
+                }
+
+                .metadata-top-row {
+                    position: relative;
+                    flex-wrap: wrap;
+                    display: flex;
+                    max-width: 100%;
+
+
+                    .top-row-left {
+                        display: flex;
+
+                        flex-direction: row;
+                        margin-top: 12px;
+                        margin-right: 12;
+                        width: calc(50% - 6px);
+
+                        a div img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            margin-right: 12px;
+                        }
+
+                        .upload-info {
+                            margin-right: 24px;
+
+                            .channel-info {
+                                display: flex;
+                                flex-direction: row;
+
+                                a {
+                                    text-decoration: none;
+                                    color: rgb(241, 241, 241);
+
+                                    h2 {
+                                        font-size: 16px;
+                                        font-weight: 500;
+                                        line-height: 22px;
+                                        cursor: pointer;
+                                        text-decoration: none;
+                                    }
+                                }
+
+
+                            }
+
+                            .channel-count {
+                                font-size: 12px;
+                                font-weight: 400;
+                                line-height: 18px;
+                                color: rgb(170, 170, 170);
+                            }
+                        }
+
+                        .subcribde-btn {
+                            height: 36px;
+                            padding-left: 16px;
+                            padding-right: 16px;
+                            cursor: pointer;
+                            background-color: rgb(241, 241, 241);
+                            border: none;
+                            border-radius: 20px;
+
+                            span {
+                                color: rgb(15, 15, 15);
+                                font-size: 14px;
+                                font-weight: 500;
+                                font-stretch: 100%;
+                                text-size-adjust: 100%;
+                                font-family: Arial, Helvetica, sans-serif;
+                            }
+
+                            &:hover{
+                                background-color: rgba(241, 241, 241, 0.9);
+                            }
+                        }
+                    }
+
+                    .top-row-right {
+                        width: calc(50% - 6px);
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+
+                        .like-dislike-button {
+                            display: flex;
+                            flex-direction: row;
+                            border-radius: 20px;
+                            height: 36px;
+                            overflow: hidden;
+
+                            button mat-icon{
+                                margin-right: 8px;
+                            }
+                        }
+
+                        .ldl-divider {
+                            margin-top: 4px;
+                            margin-bottom: 4px;
+                            height: 24px;
+                            width: 0.5px;
+                            background-color: rgba(241, 241, 241, 0.1);
+                        }
+
+                        .shape-btn {
+                            border: none;
+                            background-color: rgba(255, 255, 255, 0.1);
+                            color: #f1f1f1;
+                            height: 36px;
+                            padding-left: 16px;
+                            padding-right: 16px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+
+                            
+                        }
+
+                        .trr-btn {
+                            margin-left: 8px;
+                            border-radius: 20px;
+
+                            mat-icon {
+                                margin-left: -6px;
+                                margin-right: 6px;
+                            }
+
+                            span {
+                                font-size: 14px;
+                                font-weight: 500;
+                                text-size-adjust: 100%;
+                                text-align: center;
+                                line-height: 36px;
+                                color: rgb(241, 241, 241);
+                                font-stretch: 100%;
+                            }
+                        }
+                         
+                        button:hover{
+                            background-color: rgba(255, 255, 255, 0.3);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
