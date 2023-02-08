@@ -1,0 +1,56 @@
+$primary: #0f0f0f;
+$primary-text: #f1f1f1;
+
+//override default class of material
+.mat-drawer-side {
+    border: 0px;
+}
+
+::ng-deep .mat-drawer-inner-container::-webkit-scrollbar {
+    display: none;
+}
+
+::ng-deep .mat-drawer-inner-container:hover::-webkit-scrollbar {
+    display: block;
+}
+
+.watch-container {
+    width: 100%;
+    padding: 0px;
+    height: 100vh;
+    background-color: $primary;
+
+    .hero-container {
+        width: 100%;
+        padding: 0px;
+        height: calc(100vh - 56px);
+    }
+
+    .hero-sidenav-content {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-sidemenu {
+        padding: 0px;
+        width: 250px;
+        background-color: $primary;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        .watch-primary{
+            display: flex;
+            flex-grow: 1;
+        }
+
+        .watch-secondary{
+            width: 426px;;
+        }
+    }
+}

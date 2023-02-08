@@ -1,12 +1,13 @@
-import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { chips } from './element';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { chips } from 'app/dashboard-widget/chip-header/element';
 
 @Component({
-  selector: 'app-chip-header',
-  templateUrl: './chip-header.component.html',
-  styleUrls: ['./chip-header.component.scss'],
+  selector: 'app-chipset',
+  templateUrl: './chipset.component.html',
+  styleUrls: ['./chipset.component.scss']
 })
-export class ChipHeaderComponent implements AfterViewInit {
+
+export class ChipsetComponent {
   @ViewChild('chipContainer', { static: true }) chipContainer!: ElementRef;
   @ViewChild('chipItemContainer', { static: true }) chipItemContainer!: ElementRef;
 

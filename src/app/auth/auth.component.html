@@ -4,13 +4,11 @@
     <mat-drawer #sidemenu class="hero-sidemenu" mode="side" [opened]="openedSideMenu">
       <app-sidemenu></app-sidemenu>
     </mat-drawer>
-
     <mat-drawer-content>
       <div class="hero-content">
-        <app-sidenav *ngIf="!sidemenu.opened"></app-sidenav>
+        <!-- <app-sidenav *ngIf="!sidemenu.opened"></app-sidenav> -->
         <router-outlet></router-outlet>
       </div>
-      
     </mat-drawer-content>
   </mat-drawer-container>
 </section>

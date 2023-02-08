@@ -1,8 +1,16 @@
 $primary-text: #f1f1f1;
 $primary: #0f0f0f;
 
+//override
+::ng-deep .mdc-evolution-chip__action--presentational {
+  cursor: pointer !important;
+}
+
+
+//css
 .chip-listbox{
   position: relative;
+  width: 100%;
   
   .chip-container {
     width: 100%;
@@ -117,10 +125,5 @@ $primary: #0f0f0f;
   color: $primary-text;
   width: 24px;
   height: 24px;
-}
-
-//override
-::ng-deep .mdc-evolution-chip__action--presentational {
-  cursor: pointer !important;
 }
 

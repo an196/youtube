@@ -13,6 +13,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { WatchPrimaryComponent } from './watch-primary/watch-primary.component';
+import { WatchSecondComponent } from './watch-second/watch-second.component';
+import { WatchWidgetModule } from 'app/watch-widget/watch-widget.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     SearchbarComponent,
     SidebarComponent,
     SidenavComponent,
+    WatchPrimaryComponent,
+    WatchSecondComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +35,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     SharedModule,
     MatToolbarModule,
     MatBadgeModule,
+    WatchWidgetModule
   ],
   exports: [
     SidemenuComponent,
@@ -38,6 +44,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     SearchbarComponent,
     SidebarComponent,
     SidenavComponent,
+    WatchPrimaryComponent,
+    WatchSecondComponent,
   ],
   providers: [],
 })

@@ -9,6 +9,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class DashboardCrmComponent implements OnInit {
   numberCard = [1,1,1,1];
 
+
   constructor() {}
   ngOnInit(): void {}
 
@@ -16,5 +17,6 @@ export class DashboardCrmComponent implements OnInit {
   onResize(event: any) {
     const breakpoint = 1312;
 
+    console.log(event.target.innerWidth);
   }
 }

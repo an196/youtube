@@ -1,0 +1,15 @@
+<section class="watch-container">
+    <app-toolbar [sidemenu]="sidemenu"></app-toolbar>
+    <mat-drawer-container class="hero-container" autosize>
+      <mat-drawer #sidemenu class="hero-sidemenu" mode="side" [opened]="openedSideMenu">
+        <app-sidemenu></app-sidemenu>
+      </mat-drawer>
+      <mat-drawer></mat-drawer>
+      <mat-drawer-content>
+        <div class="hero-content">
+          <app-watch-primary class="watch-primary"></app-watch-primary>
+          <app-watch-second class="watch-secondary"></app-watch-second>
+        </div>
+      </mat-drawer-content>
+    </mat-drawer-container>
+</section>
