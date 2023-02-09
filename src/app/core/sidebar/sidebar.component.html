@@ -1,4 +1,18 @@
 <div class="sidebar-container">
+  <button class="sidebar-item" *ngIf="onMobile">
+    <mat-icon
+      class="sidebar-item-create"
+      svgIcon="search"
+      aria-hidden="false"
+      aria-label="create"></mat-icon>
+  </button>
+  <button class="sidebar-item" *ngIf="onMobile">
+    <mat-icon
+      class="sidebar-item-create"
+      svgIcon="micro"
+      aria-hidden="false"
+      aria-label="create"></mat-icon>
+  </button>
   <button class="sidebar-item">
     <mat-icon
       class="sidebar-item-create"

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 
@@ -22,7 +22,16 @@ const MICRO_ICON =
   templateUrl: './searchbar.component.html',
   styleUrls: ['./searchbar.component.scss'],
 })
-export class SearchbarComponent {
+
+export class SearchbarComponent implements OnInit{
+  onMobile!: boolean;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {    
+    this.initState();
+   
+  }
+
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIconLiteral(
       'search',
@@ -36,5 +45,14 @@ export class SearchbarComponent {
       'micro',
       sanitizer.bypassSecurityTrustHtml(MICRO_ICON)
     );
+  }
+
+  ngOnInit(): void {
+    this.initState();
+  }
+
+  initState(){
+    const innerWidth = window.innerWidth;
+    innerWidth < 656 ? this.onMobile = true : this.onMobile = false;
   }
 }

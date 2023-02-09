@@ -59,7 +59,16 @@ $primary-text: #f1f1f1;
         }
 
         .watch-secondary{
-            width: 426px;;
+            width: 426px;
+
+            @media screen and (max-width: 1120px) {
+                width: 100%;
+                padding-left: 24px;
+            }
+        }
+
+        @media screen and (max-width: 1120px) {
+            flex-direction: column;
         }
     }
 }

@@ -6,6 +6,9 @@ $primary: #0f0f0f;
   cursor: pointer !important;
 }
 
+::ng-deep .mdc-evolution-chip-set__chips{
+  margin-left: 0px !important;
+}
 
 //css
 .chip-listbox{

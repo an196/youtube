@@ -4,9 +4,10 @@
     <mat-drawer #sidemenu class="hero-sidemenu" mode="side" [opened]="openedSideMenu">
       <app-sidemenu></app-sidemenu>
     </mat-drawer>
+    <mat-drawer *ngIf="openedSideMenu2"></mat-drawer>
     <mat-drawer-content>
-      <div class="hero-content" [ngClass]="{'adjust-ng-star-inserted': !sidemenu.opened}">
-        <app-sidenav *ngIf="!sidemenu.opened"></app-sidenav>
+      <div class="hero-content" [ngClass]="{'adjust-ng-star-inserted': !sidemenu.opened && activeSideNav}">
+        <app-sidenav *ngIf="!sidemenu.opened && activeSideNav"></app-sidenav>
         <router-outlet></router-outlet>
       </div>
     </mat-drawer-content>

@@ -5,6 +5,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  .search-bar{
+    flex: 0 1 728px;
+    margin-left: 40px;
+    width: 100%;
+  }
 }
 
 .toolbar-item {

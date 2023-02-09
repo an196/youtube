@@ -1,0 +1,35 @@
+$primary: #0f0f0f;
+$primary-text: #f1f1f1;
+
+.watch-descripttion-container{
+    width: 100%;
+    margin-top: 12px;
+    margin-right: 12px;
+    background-color: #272727;
+    border-radius: 10px;
+    position: relative;
+
+    .info-container{
+        padding: 12px;
+        position: relative;
+        display: block;
+        width: 100%;
+        color: $primary-text;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        text-size-adjust: 100%;
+        white-space: pre-wrap;
+        unicode-bidi: isolate;
+        
+        .info-footer{
+            span{
+                &::before {
+                    content: "\A";
+                    white-space: pre;
+                  }
+            }
+        }
+        
+    }
+}

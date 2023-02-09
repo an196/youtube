@@ -2,12 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { WatchCardComponent } from './watch-card/watch-card.component';
-import {  MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { ChipsetComponent } from './chipset/chipset.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { DescriptionComponent } from './description/description.component';
 
 @NgModule({
-  declarations: [WatchCardComponent, ChipsetComponent],
+  declarations: [
+    WatchCardComponent,
+    ChipsetComponent,
+    DescriptionComponent
+  ],
   imports: [
     CommonModule,
     MatIconModule,
@@ -15,7 +20,8 @@ import { MatChipsModule } from '@angular/material/chips';
   ],
   exports: [
     WatchCardComponent,
-    ChipsetComponent
+    ChipsetComponent,
+    DescriptionComponent
   ]
 })
 export class WatchWidgetModule { }

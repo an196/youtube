@@ -1,4 +1,4 @@
-<div class="searchbar-container">
+<div class="searchbar-container" *ngIf="!onMobile" (window:resize)="($event)">
   <div class="search-block">
     <div class="searchbar-item">
       <form action="#" class="search-form">
