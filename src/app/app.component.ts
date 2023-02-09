@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'youtube';
+
+  getRouteAnimation(outlet: any) {
+    return outlet.activatedRouteData.animation;
+  }
 }

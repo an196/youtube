@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { AuthComponent } from './auth.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './lazyloader.routes';
-import { CoreModule } from '../core/core.module';
 
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CoreModule } from '../core/core.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { DashboardCrmModule } from 'app/dashboard-crm/dashboard-crm.module';
 
 @NgModule({
   declarations: [AuthComponent],
@@ -16,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatSidenavModule,
     MatToolbarModule,
     CoreModule,
+    DashboardCrmModule,
   ],
   providers: [],
 })

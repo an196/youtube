@@ -1,0 +1,124 @@
+$primary-text: #f1f1f1;
+$primary: #0f0f0f;
+
+//override
+::ng-deep .mdc-evolution-chip__action--presentational {
+    cursor: pointer !important;
+}
+
+
+//css  
+.chip-listbox {
+    position: relative;
+    width: 100%;
+
+    .chip-container {
+        width: 100%;
+        height: 56px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        color: $primary;
+
+        .block-overlay-left {
+            // opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .block-overlay-right {
+            justify-content: flex-end;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 10;
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+
+
+.chip-item {
+    border-radius: 8px;
+    background-color: rgba($color: #fff, $alpha: 0.1);
+    color: $primary-text;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    cursor: pointer !important;
+}
+
+.chip-item-active {
+    background-color: rgba($color: #fff, $alpha: 1);
+    color: $primary;
+}
+
+.chip-item-hover:hover {
+    background-color: rgba($color: #fff, $alpha: 0.2);
+    cursor: pointer;
+}
+
+.chip-item-container {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-container {
+    color: $primary-text;
+    cursor: pointer;
+    display: flex;
+
+    width: 56px;
+    height: 56px;
+    background-color: $primary;
+
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.linear-background-left {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(to right, $primary 20%, rgba(33, 33, 33, 0) 80%);
+}
+
+.linear-background-right {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(to left, $primary 20%, rgba(33, 33, 33, 0) 80%);
+}
+
+.btn-block {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+}
+
+.btn-block:hover {
+    background-color: rgba($color: #fff, $alpha: 0.1);
+}
+
+.btn-icon {
+    color: $primary-text;
+    width: 24px;
+    height: 24px;
+}

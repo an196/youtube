@@ -9,4 +9,35 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+:root{
+	--primary: #393a3b;
+	--secondary: #65666c;
+}
+
+html{
+	font-size: 16px;
+}
+
+/* Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--secondary) var(--primary);
+}
+
+/* Chrome, Edge and Safari */
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--primary);
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--secondary);
+	border-radius: 14px;
+	border: 1px solid var(--primary);
+}
 
