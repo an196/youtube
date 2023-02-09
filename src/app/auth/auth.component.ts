@@ -35,12 +35,7 @@ export class AuthComponent implements OnInit,AfterViewChecked {
     const innerWidth = window.innerWidth;
     const breakpoint = 1312;
 
-    if(innerWidth < breakpoint){
-      this.openedSideMenu2 = true;
-    }
-    else{
-      this.openedSideMenu2 = false;
-    }
+    innerWidth < breakpoint ?  this.openedSideMenu2 = true : this.openedSideMenu2 = false;
 
     if(innerWidth < breakpoint && this.openedSideMenu){
       this.openedSideMenu = false;

@@ -73,8 +73,18 @@ export class WatchPrimaryComponent implements OnInit, AfterViewInit {
     if(innerWidth < 1444 && this.menus.length === 2) {
       this.menus.pop();
     }
+    if(innerWidth < 688 && this.menus.length === 1) {
+      this.menus.push(this.originMenus[1]);
+      this.menus.push(this.originMenus[2]);
+    }
+    if(innerWidth < 628 && this.menus.length === 3) {
+      this.menus.pop();
+    }
+    if(innerWidth < 538 && this.menus.length === 2) {
+      this.menus.pop();
+    }
+
     if(innerWidth >= 1444 && this.menus.length === 1) {
-     
       this.menus.push(this.originMenus[1]);
     }
     if(innerWidth >= 1624 && this.menus.length === 2) {
