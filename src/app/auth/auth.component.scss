@@ -14,6 +14,13 @@ $primary-text: #f1f1f1;
   display: block;
 }
 
+.adjust-ng-star-inserted{
+  ::ng-deep .ng-star-inserted{
+    max-width: calc(100% - 72px) !important;
+  }
+}
+
+
 //css
 .auth-container {
   width: 100%;

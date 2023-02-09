@@ -52,18 +52,12 @@
                                 <mat-icon svgIcon="thumbdown"></mat-icon>
                             </button>
                         </div>
-                       
-                        <button class="trr-btn shape-btn">
-                            <mat-icon svgIcon="share"></mat-icon>
-                            <span>Chia sẻ</span>
+                        <button class="trr-btn shape-btn" *ngFor="let menu of menus">
+                            <mat-icon svgIcon="{{menu.icon}}"></mat-icon>
+                            <span>{{menu.titleVI}}</span>
                         </button>
-                        <button class="trr-btn shape-btn">
-                            <mat-icon svgIcon="scissor"></mat-icon>
-                            <span>Tạo đoạn video</span>
-                        </button>
-                        <button class="trr-btn shape-btn">
-                            <mat-icon svgIcon="threelineplus"></mat-icon>
-                            <span>Lưu</span>
+                        <button class="menu-btn">
+                            <mat-icon svgIcon="threedots"></mat-icon>
                         </button>
                     </div>
                 </div>

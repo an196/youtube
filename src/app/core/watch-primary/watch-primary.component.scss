@@ -58,7 +58,7 @@ $primary-text: #f1f1f1;
                         flex-direction: row;
                         margin-top: 12px;
                         margin-right: 12;
-                        width: calc(50% - 6px);
+                        width:50% ;
 
                         a div img {
                             width: 40px;
@@ -124,10 +124,12 @@ $primary-text: #f1f1f1;
                     }
 
                     .top-row-right {
-                        width: calc(50% - 6px);
+                        width: 50%;
                         display: flex;
                         flex-direction: row;
                         justify-content: flex-end;
+                        align-items: center;
+                        margin-top: 12px;
 
                         .like-dislike-button {
                             display: flex;
@@ -183,10 +185,21 @@ $primary-text: #f1f1f1;
                                 font-stretch: 100%;
                             }
                         }
-                         
+                        
+                        .menu-btn{
+                            margin-left: 8px;
+                            border-radius: 20px;
+                            border: none;
+                            background-color: rgba(255, 255, 255, 0.1);
+                            color: #f1f1f1;
+                            height: 36px;
+                            width: 36px;
+                            cursor: pointer;
+                        }
+                    
                         button:hover{
                             background-color: rgba(255, 255, 255, 0.3);
-                        }
+                        }   
                     }
                 }
             }
