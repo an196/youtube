@@ -3,20 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DashboardCrmComponent } from './dashboard-crm.component';
 
 describe('DashboardCrmComponent', () => {
-  let component: DashboardCrmComponent;
-  let fixture: ComponentFixture<DashboardCrmComponent>;
+    let component: DashboardCrmComponent;
+    let fixture: ComponentFixture<DashboardCrmComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [DashboardCrmComponent],
-    }).compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [DashboardCrmComponent],
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(DashboardCrmComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(DashboardCrmComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

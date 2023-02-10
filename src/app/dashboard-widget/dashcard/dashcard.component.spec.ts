@@ -3,21 +3,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DashcardComponent } from './dashcard.component';
 
 describe('DashcardComponent', () => {
-  let component: DashcardComponent;
-  let fixture: ComponentFixture<DashcardComponent>;
+    let component: DashcardComponent;
+    let fixture: ComponentFixture<DashcardComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ DashcardComponent ]
-    })
-    .compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [DashcardComponent],
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(DashcardComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(DashcardComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

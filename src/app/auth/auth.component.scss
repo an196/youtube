@@ -3,52 +3,51 @@ $primary-text: #f1f1f1;
 
 //override default class of material
 .mat-drawer-side {
-  border: 0px;
+    border: 0px;
 }
 
 ::ng-deep .mat-drawer-inner-container::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 ::ng-deep .mat-drawer-inner-container:hover::-webkit-scrollbar {
-  display: block;
+    display: block;
 }
 
-.adjust-ng-star-inserted{
-  ::ng-deep .ng-star-inserted{
-    max-width: calc(100% - 72px) !important;
-  }
+.adjust-ng-star-inserted {
+    ::ng-deep app-dashboard-crm.ng-star-inserted {
+        max-width: calc(100% - 72px) !important;
+    }
 }
-
 
 //css
 .auth-container {
-  width: 100%;
-  padding: 0px;
-  height: 100vh;
-  background-color: $primary;
+    width: 100%;
+    padding: 0px;
+    height: 100vh;
+    background-color: $primary;
 }
 
 .hero-container {
-  width: 100%;
-  padding: 0px;
-  height: calc(100vh - 56px);
+    width: 100%;
+    padding: 0px;
+    height: calc(100vh - 56px);
 }
 
 .hero-sidenav-content {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-sidemenu {
-  padding: 0px;
-  width: 250px;
-  background-color: $primary;
+    padding: 0px;
+    width: 250px;
+    background-color: $primary;
 }
 
-.hero-content{
-  display: flex;
-  flex-direction: row;
+.hero-content {
+    display: flex;
+    flex-direction: row;
 }

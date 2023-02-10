@@ -4,7 +4,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { ChipHeaderComponent } from './chip-header.component';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, MatChipsModule],
+    declarations: [],
+    imports: [CommonModule, MatChipsModule],
 })
 export class ChipHeaderModule {}

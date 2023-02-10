@@ -1,27 +1,25 @@
 $primary: #0f0f0f;
 $primary-text: #f1f1f1;
 
-.card-container{
+.card-container {
     width: 100%;
     display: flex;
     flex-direction: row;
     margin-top: 8px;
-    
-    .thumbnail{
+
+    .thumbnail {
         margin-right: 8px;
 
-        .thumbnail-img{
+        .thumbnail-img {
             width: 168px;
             height: 94px;
             border-radius: 10px;
             overflow: hidden;
             object-fit: cover;
         }
-
     }
 
     .meta {
-
         .meta-rich-content {
             margin-top: 0px;
             margin-bottom: 4px;
@@ -45,8 +43,6 @@ $primary-text: #f1f1f1;
                 display: -webkit-box;
                 text-decoration: none;
                 text-size-adjust: 100%;
-
-                
             }
         }
 
@@ -56,7 +52,6 @@ $primary-text: #f1f1f1;
         }
 
         .byline-container {
-
             a {
                 color: rgb(170, 170, 170);
                 font-size: 12px;
@@ -66,7 +61,6 @@ $primary-text: #f1f1f1;
                 word-break: break-all;
                 text-decoration: none;
                 text-size-adjust: 100%;
-
             }
         }
 
@@ -81,7 +75,6 @@ $primary-text: #f1f1f1;
     }
 
     .menu {
-        
         margin-top: 4px;
         width: 40px;
         height: 40px;
@@ -90,7 +83,7 @@ $primary-text: #f1f1f1;
         align-items: center;
         flex: none;
         cursor: pointer;
-        
+
         .menu-icon {
             width: 24px;
             height: 24px;
@@ -98,4 +91,3 @@ $primary-text: #f1f1f1;
         }
     }
 }
-

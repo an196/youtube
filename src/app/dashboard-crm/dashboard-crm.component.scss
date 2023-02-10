@@ -5,56 +5,52 @@ $extra-large: 1280px;
 $extra-extra-large: 1536px;
 
 .dashboard-container {
-  background-color: $primary;
+    background-color: $primary;
 }
 
-.dashboard-content-container{
-  padding-top: 24px;
-  margin-left: 32px;
-  margin-right: 32px;
+.dashboard-content-container {
+    padding-top: 24px;
+    margin-left: 32px;
+    margin-right: 32px;
 
-  .dashboard-content{
-    margin-left: 16px;
-    margin-right: 16px;
-    display: flex;
-    flex-direction: row;
+    .dashboard-content {
+        margin-left: 16px;
+        margin-right: 16px;
+        display: flex;
+        flex-direction: row;
 
-    // @media screen and (max-width: $extra-extra-large){
-    //   width: calc(100% - 32px) ;
-    //   margin-left: 8px;
-    // }
-  }
+        // @media screen and (max-width: $extra-extra-large){
+        //   width: calc(100% - 32px) ;
+        //   margin-left: 8px;
+        // }
+    }
 
-  .dashboard-divider{
-    margin-left: 24px;
-    width: calc(100% - 80px) ;
-    height: 5px;
-    background-color: rgba(63, 63, 63, $alpha: 1.0);
-   
-  }
+    .dashboard-divider {
+        margin-left: 24px;
+        width: calc(100% - 80px);
+        height: 5px;
+        background-color: rgba(63, 63, 63, $alpha: 1);
+    }
 
-  .dashboard-header{
-    margin-left: 24px;
-    margin-top: 24px;
-    margin-bottom: 24px;
-    color: rgb(241, 241, 241);
-    font-size: 20px;
-    font-weight: 400;
-    text-size-adjust: 100%;
-    line-height: 28px;
-  }
+    .dashboard-header {
+        margin-left: 24px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        color: rgb(241, 241, 241);
+        font-size: 20px;
+        font-weight: 400;
+        text-size-adjust: 100%;
+        line-height: 28px;
+    }
 
-  @media screen and (max-width: $extra-extra-large){
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-  
+    @media screen and (max-width: $extra-extra-large) {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 }
-
-
 
 //override
-::ng-deep .ng-star-inserted{
-  max-width: 100%;
-  width: fit-content;
+::ng-deep .ng-star-inserted {
+    max-width: 100%;
+    width: fit-content;
 }

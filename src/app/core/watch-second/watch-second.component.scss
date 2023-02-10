@@ -1,13 +1,13 @@
 $primary: #0f0f0f;
 $primary-text: #f1f1f1;
 
-.container{
+.container {
     height: 100%;
     background-color: $primary;
     padding-top: 24px;
     padding-right: 24px;
 
-    .card-container{
+    .card-container {
         width: 100%;
         display: flex;
         flex-direction: column;

@@ -1,94 +1,117 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import {
+    AfterContentInit,
+    AfterViewInit,
+    Component,
+    ElementRef,
+    HostListener,
+    OnInit,
+    ViewChild,
+} from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 
 import { icons } from './watch-primary-icon';
 import { menus } from './menu-elements';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
-  selector: 'app-watch-primary',
-  templateUrl: './watch-primary.component.html',
-  styleUrls: ['./watch-primary.component.scss']
+    selector: 'app-watch-primary',
+    templateUrl: './watch-primary.component.html',
+    styleUrls: ['./watch-primary.component.scss'],
 })
-export class WatchPrimaryComponent implements OnInit, AfterViewInit {
+export class WatchPrimaryComponent implements OnInit, AfterContentInit {
+    @ViewChild('playerMedia', { static: true }) playerMedia!: ElementRef;
 
-  @ViewChild('playerMedia', { static: true }) playerMedia!: ElementRef;
+    heightMediaFrame!: string;
+    public menus = [...menus];
+    private originMenus = [...menus];
 
-  heightMediaFrame!: string;
-  public menus = [...menus];
-  private originMenus = [...menus];
+    _idVideo!: string | null;
+    videoUrl!: any | null;
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.setMediaFrameHeight();
-    this.initMenu();
-  }
-
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIconLiteral(
-      'thumbup',
-      sanitizer.bypassSecurityTrustHtml(icons.thumbup)
-    );
-    iconRegistry.addSvgIconLiteral(
-      'thumbdown',
-      sanitizer.bypassSecurityTrustHtml(icons.thumbdown)
-    );
-    iconRegistry.addSvgIconLiteral(
-      'share',
-      sanitizer.bypassSecurityTrustHtml(icons.share)
-    );
-    iconRegistry.addSvgIconLiteral(
-      'scissor',
-      sanitizer.bypassSecurityTrustHtml(icons.scissor)
-    );
-    iconRegistry.addSvgIconLiteral(
-      'threelineplus',
-      sanitizer.bypassSecurityTrustHtml(icons.threelineplus)
-    );
-    iconRegistry.addSvgIconLiteral(
-      'threedots',
-      sanitizer.bypassSecurityTrustHtml(icons.threedots)
-    );
-  }
-
-  ngOnInit() {
-    
-  }
-  
-  ngAfterViewInit() {
-    this.setMediaFrameHeight();
-    this.initMenu();
-  }
-
-  setMediaFrameHeight(): void {
-    const widthPlayerMedia = this.playerMedia.nativeElement.offsetWidth;
-    this.heightMediaFrame = (widthPlayerMedia * 720 /1280).toString() + 'px';
-  }
-
-  initMenu(){
-    const innerWidth = window.innerWidth;
-    if(innerWidth < 1624 && this.menus.length === 3) {
-      this.menus.pop();
-    }
-    if(innerWidth < 1444 && this.menus.length === 2) {
-      this.menus.pop();
-    }
-    if(innerWidth < 688 && this.menus.length === 1) {
-      this.menus.push(this.originMenus[1]);
-      this.menus.push(this.originMenus[2]);
-    }
-    if(innerWidth < 628 && this.menus.length === 3) {
-      this.menus.pop();
-    }
-    if(innerWidth < 538 && this.menus.length === 2) {
-      this.menus.pop();
+    @HostListener('window:resize', ['$event'])
+    onResize(event: any) {
+        this.setMediaFrameHeight();
+        this.initMenu();
     }
 
-    if(innerWidth >= 1444 && this.menus.length === 1) {
-      this.menus.push(this.originMenus[1]);
+    constructor(
+        iconRegistry: MatIconRegistry,
+        sanitizer: DomSanitizer,
+        private route: ActivatedRoute
+    ) {
+        iconRegistry.addSvgIconLiteral(
+            'thumbup',
+            sanitizer.bypassSecurityTrustHtml(icons.thumbup)
+        );
+        iconRegistry.addSvgIconLiteral(
+            'thumbdown',
+            sanitizer.bypassSecurityTrustHtml(icons.thumbdown)
+        );
+        iconRegistry.addSvgIconLiteral(
+            'share',
+            sanitizer.bypassSecurityTrustHtml(icons.share)
+        );
+        iconRegistry.addSvgIconLiteral(
+            'scissor',
+            sanitizer.bypassSecurityTrustHtml(icons.scissor)
+        );
+        iconRegistry.addSvgIconLiteral(
+            'threelineplus',
+            sanitizer.bypassSecurityTrustHtml(icons.threelineplus)
+        );
+        iconRegistry.addSvgIconLiteral(
+            'threedots',
+            sanitizer.bypassSecurityTrustHtml(icons.threedots)
+        );
+
+        this.route.paramMap.subscribe((params: ParamMap) => {
+            this._idVideo = params.get('id');
+        });
+
+        const baseURl = 'https://www.youtube.com/embed/' + this._idVideo;
+        this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl(baseURl);
     }
-    if(innerWidth >= 1624 && this.menus.length === 2) {
-      this.menus.push(this.originMenus[2]);
+
+    ngOnInit() {
+        this.heightMediaFrame = '0px';
     }
-  }
+
+    ngAfterContentInit() {
+        this.setMediaFrameHeight();
+        this.initMenu();
+    }
+
+    setMediaFrameHeight(): void {
+        const widthPlayerMedia = this.playerMedia.nativeElement.offsetWidth;
+        this.heightMediaFrame =
+            ((widthPlayerMedia * 720) / 1280).toString() + 'px';
+    }
+
+    initMenu() {
+        const innerWidth = window.innerWidth;
+        if (innerWidth < 1624 && this.menus.length === 3) {
+            this.menus.pop();
+        }
+        if (innerWidth < 1444 && this.menus.length === 2) {
+            this.menus.pop();
+        }
+        if (innerWidth < 688 && this.menus.length === 1) {
+            this.menus.push(this.originMenus[1]);
+            this.menus.push(this.originMenus[2]);
+        }
+        if (innerWidth < 628 && this.menus.length === 3) {
+            this.menus.pop();
+        }
+        if (innerWidth < 538 && this.menus.length === 2) {
+            this.menus.pop();
+        }
+
+        if (innerWidth >= 1444 && this.menus.length === 1) {
+            this.menus.push(this.originMenus[1]);
+        }
+        if (innerWidth >= 1624 && this.menus.length === 2) {
+            this.menus.push(this.originMenus[2]);
+        }
+    }
 }

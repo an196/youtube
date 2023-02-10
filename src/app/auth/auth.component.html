@@ -1,15 +1,24 @@
 <section class="auth-container" (window:resize)="onResize($event)">
-  <app-toolbar [sidemenu]="sidemenu"></app-toolbar>
-  <mat-drawer-container class="hero-container" autosize>
-    <mat-drawer #sidemenu class="hero-sidemenu" mode="side" [opened]="openedSideMenu">
-      <app-sidemenu></app-sidemenu>
-    </mat-drawer>
-    <mat-drawer *ngIf="openedSideMenu2"></mat-drawer>
-    <mat-drawer-content>
-      <div class="hero-content" [ngClass]="{'adjust-ng-star-inserted': !sidemenu.opened && activeSideNav}">
-        <app-sidenav *ngIf="!sidemenu.opened && activeSideNav"></app-sidenav>
-        <router-outlet></router-outlet>
-      </div>
-    </mat-drawer-content>
-  </mat-drawer-container>
+    <app-toolbar [sidemenu]="sidemenu"></app-toolbar>
+    <mat-drawer-container class="hero-container" autosize>
+        <mat-drawer
+            position="start"
+            #sidemenu
+            class="hero-sidemenu"
+            [mode]="sideMenuMode"
+            [opened]="openedSideMenu">
+            <app-sidemenu></app-sidemenu>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div
+                class="hero-content"
+                [ngClass]="{
+                    'adjust-ng-star-inserted': !sidemenu.opened && activeSideNav
+                }">
+                <app-sidenav
+                    *ngIf="!sidemenu.opened && activeSideNav"></app-sidenav>
+                <router-outlet></router-outlet>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
 </section>

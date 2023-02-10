@@ -8,20 +8,26 @@
         
                     </video>
                 </vg-player> -->
-                <iframe width="100%" [height]="heightMediaFrame" 
-                    src="https://www.youtube.com/embed/U_6xHKGf3Ho" 
-                    allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen"
-                    msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen"
-                    webkitallowfullscreen="webkitallowfullscreen">
+                <iframe
+                    width="100%"
+                    [height]="heightMediaFrame"
+                    [src]="videoUrl"
+                    allowfullscreen="allowfullscreen"
+                    mozallowfullscreen="mozallowfullscreen"
+                    msallowfullscreen="msallowfullscreen"
+                    oallowfullscreen="oallowfullscreen"
+                    webkitallowfullscreen="webkitallowfullscreen"
+                    frameboreder="0"
+                    allow="accelerometer"
+                    autoplay="clipboard-write;encrypted-media; gyroscope;picture-in-picture">
                 </iframe>
-
             </div>
         </div>
         <div class="below">
             <app-metadata-top-row></app-metadata-top-row>
             <app-description></app-description>
             <div class="metadata-comment-close">
-                Tính năng bình luận đã bị tắt. 
+                Tính năng bình luận đã bị tắt.
             </div>
         </div>
     </div>
