@@ -1,5 +1,5 @@
-<div class="card-container">
-    <div class="card-item-container">
+<div class="card-container" *ngIf="video">
+    <!-- <div class="card-item-container">
         <div class="thumbnail">
             <a href="watch">
                 <div class="thumbnail-img">
@@ -27,6 +27,44 @@
                     </div>
                     <div class="meta-data-line">
                         3,9 N lượt xem 9 giờ trước
+                    </div>
+                </div>
+            </div>
+            <div class="menu">
+                <mat-icon class="menu-icon" svgIcon="threedots"></mat-icon>
+            </div>
+        </div>
+    </div> -->
+    <div class="card-item-container">
+        <div class="thumbnail">
+            <a [href]="'watch/' + video._id">
+                <div class="thumbnail-img">
+                    <img
+                        [src]="video.infoVideo.thumbnail"
+                        [alt]="video.infoVideo.title" />
+                </div>
+            </a>
+        </div>
+        <div class="detail">
+            <a class="avatar-link" href="">
+                <div class="avatar-block">
+                    <img
+                        [src]="video.infoOwner.imgProfile"
+                        [alt]="video.infoOwner.channelName" />
+                </div>
+            </a>
+            <div class="meta">
+                <h3 class="meta-rich-content">
+                    <a href="#" class="meta-rich-title">
+                        {{ video.infoVideo.title }}
+                    </a>
+                </h3>
+                <div class="meata-data">
+                    <div class="byline-container">
+                        <a href="#"> {{ video.infoOwner.channelName }}</a>
+                    </div>
+                    <div class="meta-data-line">
+                        {{ video.infoVideo.timePost }}
                     </div>
                 </div>
             </div>

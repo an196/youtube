@@ -9,22 +9,18 @@ import { DescriptionComponent } from './description/description.component';
 import { MetadataTopRowComponent } from './metadata-top-row/metadata-top-row.component';
 
 @NgModule({
-  declarations: [
-    WatchCardComponent,
-    ChipsetComponent,
-    DescriptionComponent,
-    MetadataTopRowComponent,
-  ],
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatChipsModule
-  ],
-  exports: [
-    WatchCardComponent,
-    ChipsetComponent,
-    DescriptionComponent,
-    MetadataTopRowComponent,
-  ]
+    declarations: [
+        WatchCardComponent,
+        ChipsetComponent,
+        DescriptionComponent,
+        MetadataTopRowComponent,
+    ],
+    imports: [CommonModule, MatIconModule, MatChipsModule],
+    exports: [
+        WatchCardComponent,
+        ChipsetComponent,
+        DescriptionComponent,
+        MetadataTopRowComponent,
+    ],
 })
-export class WatchWidgetModule { }
+export class WatchWidgetModule {}

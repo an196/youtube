@@ -1,4 +1,4 @@
-export const menus =[
+export const menus = [
     {
         name: 'share',
         titleVI: 'Chia sẻ',
@@ -20,5 +20,4 @@ export const menus =[
         icon: 'threelineplus',
         opened: true,
     },
-
-]
+];

@@ -7,8 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { DashcardComponent } from './dashcard/dashcard.component';
 
 @NgModule({
-  declarations: [ChipHeaderComponent, DashcardComponent, ],
-  imports: [CommonModule, MatChipsModule, MatButtonModule, MatIconModule],
-  exports: [ChipHeaderComponent, DashcardComponent, ],
+    declarations: [ChipHeaderComponent, DashcardComponent],
+    imports: [CommonModule, MatChipsModule, MatButtonModule, MatIconModule],
+    exports: [ChipHeaderComponent, DashcardComponent],
 })
-export class DashboardWidgetModule { }
+export class DashboardWidgetModule {}

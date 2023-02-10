@@ -1,11 +1,14 @@
 <mat-nav-list class="item-container">
-  <mat-list-item class="item-list" *ngFor="let menu of menus" [ngClass]="{'item-list-active': menu.opened == true}" >
-    <div class="item-list-block">
-      <mat-icon
-        class="item-menu-icon"
-        svgIcon="{{ menu.icon }}"
-        aria-hidden="false"></mat-icon>
-      <a href="..." class="item-menu-label">{{ menu.titleVI }}</a>
-    </div>
-  </mat-list-item>
+    <mat-list-item
+        class="item-list"
+        *ngFor="let menu of menus"
+        [ngClass]="{ 'item-list-active': menu.opened == true }">
+        <div class="item-list-block">
+            <mat-icon
+                class="item-menu-icon"
+                svgIcon="{{ menu.icon }}"
+                aria-hidden="false"></mat-icon>
+            <a href="..." class="item-menu-label">{{ menu.titleVI }}</a>
+        </div>
+    </mat-list-item>
 </mat-nav-list>

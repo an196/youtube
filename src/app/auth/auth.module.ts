@@ -10,15 +10,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { DashboardCrmModule } from 'app/dashboard-crm/dashboard-crm.module';
 
 @NgModule({
-  declarations: [AuthComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(appRoutes),
-    MatSidenavModule,
-    MatToolbarModule,
-    CoreModule,
-    DashboardCrmModule,
-  ],
-  providers: [],
+    declarations: [AuthComponent],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(appRoutes),
+        MatSidenavModule,
+        MatToolbarModule,
+        CoreModule,
+        DashboardCrmModule,
+    ],
+    providers: [],
 })
 export class AuthModule {}

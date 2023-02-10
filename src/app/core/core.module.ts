@@ -16,39 +16,39 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { WatchPrimaryComponent } from './watch-primary/watch-primary.component';
 import { WatchSecondComponent } from './watch-second/watch-second.component';
 import { WatchWidgetModule } from 'app/watch-widget/watch-widget.module';
-import { VgCoreModule } from '@videogular/ngx-videogular/core'; 
+import { VgCoreModule } from '@videogular/ngx-videogular/core';
 
 @NgModule({
-  declarations: [
-    SidemenuComponent,
-    SidemenuItemComponent,
-    ToolbarComponent,
-    SearchbarComponent,
-    SidebarComponent,
-    SidenavComponent,
-    WatchPrimaryComponent,
-    WatchSecondComponent,
-  ],
-  imports: [
-    CommonModule,
-    MatListModule,
-    MatIconModule,
-    SharedModule,
-    MatToolbarModule,
-    MatBadgeModule,
-    WatchWidgetModule,
-    VgCoreModule,
-  ],
-  exports: [
-    SidemenuComponent,
-    SidemenuItemComponent,
-    ToolbarComponent,
-    SearchbarComponent,
-    SidebarComponent,
-    SidenavComponent,
-    WatchPrimaryComponent,
-    WatchSecondComponent,
-  ],
-  providers: [],
+    declarations: [
+        SidemenuComponent,
+        SidemenuItemComponent,
+        ToolbarComponent,
+        SearchbarComponent,
+        SidebarComponent,
+        SidenavComponent,
+        WatchPrimaryComponent,
+        WatchSecondComponent,
+    ],
+    imports: [
+        CommonModule,
+        MatListModule,
+        MatIconModule,
+        SharedModule,
+        MatToolbarModule,
+        MatBadgeModule,
+        WatchWidgetModule,
+        VgCoreModule,
+    ],
+    exports: [
+        SidemenuComponent,
+        SidemenuItemComponent,
+        ToolbarComponent,
+        SearchbarComponent,
+        SidebarComponent,
+        SidenavComponent,
+        WatchPrimaryComponent,
+        WatchSecondComponent,
+    ],
+    providers: [],
 })
 export class CoreModule {}

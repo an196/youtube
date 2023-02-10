@@ -14,7 +14,7 @@ $primary-text: #f1f1f1;
     display: block;
 }
 
-::ng-deep .mat-drawer-content{
+::ng-deep .mat-drawer-content {
     display: flex !important;
     justify-content: center;
     background-color: $primary;
@@ -24,14 +24,13 @@ $primary-text: #f1f1f1;
 .watch-container {
     width: 100%;
     padding: 0px;
-    height: 100vh;
     background-color: $primary;
-   
 
     .hero-container {
         width: 100%;
         padding: 0px;
         height: calc(100vh - 56px);
+        z-index: 10;
     }
 
     .hero-sidenav-content {
@@ -53,12 +52,12 @@ $primary-text: #f1f1f1;
         width: 100%;
         max-width: 1754px;
 
-        .watch-primary{
+        .watch-primary {
             display: flex;
             flex-grow: 1;
         }
 
-        .watch-secondary{
+        .watch-secondary {
             width: 426px;
 
             @media screen and (max-width: 1120px) {

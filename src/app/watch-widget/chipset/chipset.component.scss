@@ -6,8 +6,7 @@ $primary: #0f0f0f;
     cursor: pointer !important;
 }
 
-
-//css  
+//css
 .chip-listbox {
     position: relative;
     width: 100%;
@@ -41,8 +40,6 @@ $primary: #0f0f0f;
         }
     }
 }
-
-
 
 .chip-item {
     border-radius: 8px;
@@ -85,17 +82,18 @@ $primary: #0f0f0f;
     height: 56px;
     background-color: $primary;
 
-
     justify-content: center;
     align-items: center;
 }
 
-
-
 .linear-background-left {
     width: 56px;
     height: 56px;
-    background: linear-gradient(to right, $primary 20%, rgba(33, 33, 33, 0) 80%);
+    background: linear-gradient(
+        to right,
+        $primary 20%,
+        rgba(33, 33, 33, 0) 80%
+    );
 }
 
 .linear-background-right {

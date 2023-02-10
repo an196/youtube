@@ -1,19 +1,14 @@
-<section class="dashboard-container"  (window:resize)="onResize($event)">
-  <app-chip-header></app-chip-header>
+<section class="dashboard-container" (window:resize)="onResize($event)">
+    <app-chip-header></app-chip-header>
     <div class="dashboard-content-container">
-      <section class="dashboard-content">
-        <app-dashcard *ngFor="let i of numberCard"></app-dashcard>
-      </section>
-      <section class="dashboard-content">
-        <app-dashcard *ngFor="let i of numberCard"></app-dashcard>
-        
-      </section>
-      <div class="dashboard-divider"></div>
-      <h3 class="dashboard-header">Tin tức hàng đầu</h3>
-      <section class="dashboard-content">
-        <app-dashcard *ngFor="let i of numberCard"></app-dashcard>
-        
-      </section>
+        <section class="dashboard-content" *ngFor="let rowItems of showVideos">
+            <app-dashcard *ngFor="let i of rowItems" [video]="i"></app-dashcard>
+        </section>
+
+        <div class="dashboard-divider"></div>
+        <h3 class="dashboard-header">Tin tức hàng đầu</h3>
+        <section class="dashboard-content" *ngFor="let rowItems of showVideos">
+            <app-dashcard *ngFor="let i of rowItems" [video]="i"></app-dashcard>
+        </section>
     </div>
-   
 </section>

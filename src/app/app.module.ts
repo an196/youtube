@@ -10,20 +10,19 @@ import { VgControlsModule } from '@videogular/ngx-videogular/controls';
 import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
 import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 
-
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule, 
-    LazyLoadModule, 
-    CoreModule, 
-    BrowserAnimationsModule, 
-    VgCoreModule, 
-    VgOverlayPlayModule, 
-    VgBufferingModule,
-    VgControlsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        LazyLoadModule,
+        CoreModule,
+        BrowserAnimationsModule,
+        VgCoreModule,
+        VgOverlayPlayModule,
+        VgBufferingModule,
+        VgControlsModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
