@@ -37,7 +37,7 @@ import { VgCoreModule } from '@videogular/ngx-videogular/core';
     MatToolbarModule,
     MatBadgeModule,
     WatchWidgetModule,
-    VgCoreModule
+    VgCoreModule,
   ],
   exports: [
     SidemenuComponent,

@@ -6,12 +6,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { ChipsetComponent } from './chipset/chipset.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { DescriptionComponent } from './description/description.component';
+import { MetadataTopRowComponent } from './metadata-top-row/metadata-top-row.component';
 
 @NgModule({
   declarations: [
     WatchCardComponent,
     ChipsetComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    MetadataTopRowComponent,
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { DescriptionComponent } from './description/description.component';
   exports: [
     WatchCardComponent,
     ChipsetComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    MetadataTopRowComponent,
   ]
 })
 export class WatchWidgetModule { }
