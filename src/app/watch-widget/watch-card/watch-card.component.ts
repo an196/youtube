@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input,OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 
@@ -9,11 +9,17 @@ const THREEDOT_ICON = `<svg viewBox="0 0 24 24"><g><path d="M12,16.5c0.83,0,1.5,
     templateUrl: './watch-card.component.html',
     styleUrls: ['./watch-card.component.scss'],
 })
-export class WatchCardComponent {
+export class WatchCardComponent implements OnInit{
+    @Input() video!: any; 
+    imgSrc: string = '';
     constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
         iconRegistry.addSvgIconLiteral(
             'threedots',
             sanitizer.bypassSecurityTrustHtml(THREEDOT_ICON)
         );
+    }
+
+    ngOnInit(): void {
+        this.imgSrc = this.video.infoVideo.thumbnail_s2;
     }
 }
