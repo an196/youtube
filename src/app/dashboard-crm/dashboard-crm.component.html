@@ -1,4 +1,4 @@
-<section class="dashboard-container" (window:resize)="onResize($event)">
+<section class="dashboard-container" (window:resize)="onResize($event)" #dashboard>
     <app-chip-header></app-chip-header>
     <div class="dashboard-content-container">
         <section class="dashboard-content" *ngFor="let rowItems of showVideos">

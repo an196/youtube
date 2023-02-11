@@ -9,6 +9,8 @@ import { VgCoreModule } from '@videogular/ngx-videogular/core';
 import { VgControlsModule } from '@videogular/ngx-videogular/controls';
 import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
 import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
+import { HttpClientModule } from '@angular/common/http';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
     declarations: [AppComponent],
@@ -21,8 +23,11 @@ import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
         VgOverlayPlayModule,
         VgBufferingModule,
         VgControlsModule,
+        HttpClientModule,
+        OAuthModule
     ],
-    providers: [],
+    providers: [
+    ],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

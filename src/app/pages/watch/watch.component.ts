@@ -9,6 +9,6 @@ export class WatchComponent implements OnInit {
     openedSideMenu!: boolean;
 
     ngOnInit(): void {
-        this.openedSideMenu = false; //1280 720
+        this.openedSideMenu = false;
     }
 }
