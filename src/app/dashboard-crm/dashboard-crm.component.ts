@@ -8,7 +8,7 @@ import { videos } from 'data/dummy.data';
 })
 export class DashboardCrmComponent implements OnInit {
     numberCard = [1, 1, 1, 1];
-    private tempVideos: Array<any> = [...videos];
+    private tempVideos: Array<any> = [...videos.slice(0,8)];
     public showVideos!: Object[][];
     private itemPerRow = 4;
     private countLoop = this.tempVideos.length / this.itemPerRow;
