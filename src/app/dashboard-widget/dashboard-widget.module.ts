@@ -5,10 +5,11 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DashcardComponent } from './dashcard/dashcard.component';
+import { SideLoginComponent } from './side-login/side-login.component';
 
 @NgModule({
-    declarations: [ChipHeaderComponent, DashcardComponent],
+    declarations: [ChipHeaderComponent, DashcardComponent, SideLoginComponent],
     imports: [CommonModule, MatChipsModule, MatButtonModule, MatIconModule],
-    exports: [ChipHeaderComponent, DashcardComponent],
+    exports: [ChipHeaderComponent, DashcardComponent, SideLoginComponent],
 })
-export class DashboardWidgetModule {}
+export class DashboardWidgetModule { }
