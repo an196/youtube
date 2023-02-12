@@ -13,16 +13,21 @@ $extra-extra-large: 1536px;
     margin-left: 32px;
     margin-right: 32px;
 
+    @media screen and (max-width: 512px) {
+        margin-left: 42px !important;
+        margin-right: 38px !important;
+    }
+
     .dashboard-content {
         margin-left: 16px;
         margin-right: 16px;
         display: flex;
         flex-direction: row;
 
-        // @media screen and (max-width: $extra-extra-large){
-        //   width: calc(100% - 32px) ;
-        //   margin-left: 8px;
-        // }
+        ::ng-deep app-dashcard.ng-star-inserted {
+            display: flex;
+            flex: 1 1 0;
+        }
     }
 
     .dashboard-divider {
@@ -49,8 +54,4 @@ $extra-extra-large: 1536px;
     }
 }
 
-//override
-::ng-deep .ng-star-inserted {
-    max-width: 100%;
-    width: fit-content;
-}
+

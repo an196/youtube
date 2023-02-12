@@ -1,51 +1,85 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { Video } from 'app/interface/video.interface';
+import { VideoService } from 'app/services/video.service';
 import { videos } from 'data/dummy.data';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
     selector: 'app-dashboard-crm',
     templateUrl: './dashboard-crm.component.html',
     styleUrls: ['./dashboard-crm.component.scss'],
 })
-export class DashboardCrmComponent implements OnInit {
-    numberCard = [1, 1, 1, 1];
-    private tempVideos: Array<any> = [...videos];
-    public showVideos!: Object[][];
+export class DashboardCrmComponent implements OnInit, OnDestroy {
+    width$ = new BehaviorSubject<number>(0);
+    private observer!: any;
+
+    public showVideos!: Video[][];
     private itemPerRow = 4;
-    private countLoop = this.tempVideos.length / this.itemPerRow;
+    private countLoop = 2;
+    _videos !:Video[];
+    private tempVideos!: Video[] | any;
 
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
         this.initItemPerRow();
     }
 
-    constructor() {}
+    constructor(private host: ElementRef, private zone: NgZone, private videoService: VideoService) {
+
+    }
+
     ngOnInit(): void {
-        this.showVideos = this.fillData();
-        console.log(this.showVideos);
-        this.initItemPerRow();
+        //get data
+        this.videoService.getVideos().subscribe(
+            (results: Video[]) => {
+                this._videos = [...results];
+
+                //init view
+                this.observer = new ResizeObserver(entries => {
+                    this.zone.run(() => {
+                        this.width$.next(entries[0].contentRect.width);
+
+                    });
+                    this.onDashboardToggle();
+                });
+
+                this.observer.observe(this.host.nativeElement);
+
+                this.getTempVideos();
+                this.showVideos = this.fillData();
+                this.initItemPerRow();
+            },
+            err => console.log(err)
+        );
+
+
+    }
+
+    ngOnDestroy() {
+        this.observer.unobserve(this.host.nativeElement);
     }
 
     initItemPerRow() {
         const innerWidth = window.innerWidth;
 
         if (innerWidth < 1142 && this.showVideos[0].length === 4) {
-            this.pushVideo();
+            this.popVideo();
         }
         if (innerWidth < 888 && this.showVideos[0].length === 3) {
-            this.pushVideo();
+            this.popVideo();
         }
         if (innerWidth < 512 && this.showVideos[0].length === 2) {
-            this.pushVideo();
+            this.popVideo();
         }
 
         if (innerWidth >= 512 && this.showVideos[0].length === 1) {
-            this.popVideo();
+            this.pushVideo();
         }
         if (innerWidth >= 888 && this.showVideos[0].length === 2) {
-            this.popVideo();
+            this.pushVideo();
         }
         if (innerWidth >= 1142 && this.showVideos[0].length === 3) {
-            this.popVideo();
+            this.pushVideo();
         }
     }
 
@@ -64,13 +98,40 @@ export class DashboardCrmComponent implements OnInit {
         return boxVideos;
     }
 
-    pushVideo() {
+    getTempVideos() {
+        if(this._videos){
+            this.tempVideos = [...this._videos.slice(0, this.itemPerRow * this.countLoop)];
+        }else{
+            this.tempVideos = [...videos.slice(0, this.itemPerRow * this.countLoop)];
+        }
+       
+    }
+
+    popVideo() {
         for (let i = 0; i < this.countLoop; i++)
             this.tempVideos.push(this.showVideos[i].pop());
     }
 
-    popVideo() {
+    pushVideo() {
         for (let i = this.countLoop - 1; i >= 0; i--)
             this.showVideos[i].push(this.tempVideos.pop());
+    }
+
+    onDashboardToggle() {
+        if (this.width$.value > 1774 && this.showVideos[0].length === 4) {
+            this.itemPerRow = 5;
+            this.getTempVideos();
+            this.showVideos = this.fillData();
+        }
+        if (this.width$.value < 1774 && this.showVideos[0].length === 5) {
+            this.itemPerRow = 4;
+            this.getTempVideos();
+            this.showVideos = this.fillData();
+        }
+
+    }
+
+    getVideos(){
+        
     }
 }

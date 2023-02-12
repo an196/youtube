@@ -16,10 +16,19 @@ $primary-text: #f1f1f1;
             border-radius: 10px;
             overflow: hidden;
             object-fit: cover;
+
+            img{
+                width: 168px;
+                height: 94px;
+            }
         }
     }
 
     .meta {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        
         .meta-rich-content {
             margin-top: 0px;
             margin-bottom: 4px;

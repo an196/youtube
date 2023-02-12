@@ -59,7 +59,8 @@ $primary-text: #f1f1f1;
 
         .watch-secondary {
             width: 426px;
-
+            height: fit-content;
+            
             @media screen and (max-width: 1120px) {
                 width: 100%;
                 padding-left: 24px;

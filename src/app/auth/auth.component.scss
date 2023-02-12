@@ -50,4 +50,8 @@ $primary-text: #f1f1f1;
 .hero-content {
     display: flex;
     flex-direction: row;
+
+    ::ng-deep app-dashboard-crm.ng-star-inserted {
+        width: 100%;
+    }
 }

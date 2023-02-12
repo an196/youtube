@@ -1,0 +1,68 @@
+.side-login-container{
+    display: flex;
+    flex-direction: row;
+    margin-left: 8px;
+    
+    .sidelogin-item {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        border: none;
+        background-color: transparent;
+        color: #f1f1f1;
+        cursor: pointer;
+        margin-right: 8px;
+
+        &:hover {
+            background: rgba($color: #fff, $alpha: 0.1);
+            border-radius: 50%;
+        }
+    }
+
+    .sidelogin-btn{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 14px;
+        text-size-adjust: 100%;
+        line-height: 36px;
+        white-space: nowrap;
+        height: 40px;
+        color: rgb(62, 166, 255);
+        background-color: transparent;
+        border-radius: 20px;
+        border: 1px solid rgba($color: #f1f1f1, $alpha: 0.3);
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .sidelogin-btn-icon{
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+            margin-right: 6px;
+            margin-left: -6px;
+
+            mat-icon{
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .sidelogin-btn-label{
+
+        }
+
+        &:hover{
+           background-color: rgba(62, 166, 255, 0.2);
+           border: none;
+           padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+}
