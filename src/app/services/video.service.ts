@@ -7,21 +7,21 @@ import { isDevMode } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class VideoService {
-    private readonly apiUrl: string = (isDevMode() ? environment.localUrl : environment.baseUrl) + '/video';
+    private readonly apiUrl: string = (!isDevMode() ? environment.localUrl : environment.baseUrl) + '/video';
    
     headers!: HttpHeaders;
     constructor(private http: HttpClient) { 
-      this.headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Access-Control-Allow-Headers': 'Content-Type',
-        'X-Custom-Header': 'youtube'
-      });
+      this.headers = new HttpHeaders();
+      this.headers = this.headers
+        .set('Content-Type', 'application/json')
+        .set('Accept', 'application/json')
+        .set('Access-Control-Allow-Headers', 'Content-Type')
+        .set('X-Custom-Header', 'youtube')
     }
 
     getVideos(size: number = 10): Observable<Video[]> {
      
-        return this.http.get<Video[]>(`${this.apiUrl}`, {...this.headers});
+        return this.http.get<Video[]>(`${this.apiUrl}`, {headers: this.headers});
       }
     
    
