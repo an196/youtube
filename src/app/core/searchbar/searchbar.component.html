@@ -1,26 +1,27 @@
 <div class="searchbar-container" *ngIf="!onMobile" (window:resize)="($event)">
-    <div class="search-block">
-        <div class="searchbar-item">
+    <div class="search-block" [ngClass]="{'search-block-toggle': isFocusingInput }">
+        <div class="searchbar-item" [ngClass]="{'search-item-toggle': isFocusingInput }">
             <form action="#" class="search-form">
-                <span class="searchform-icon">
+                <div class="searchform-icon" [ngClass]="{'display-div': !isFocusingInput }">
                     <mat-icon
                         class="searchform-icon-search"
                         svgIcon="search"
                         aria-hidden="false"
                         aria-label="menu"></mat-icon>
-                </span>
+                </div>
                 <div class="searchform-input">
-                    <input type="text" placeholder="Tìm kiếm" />
+                    <input type="text" placeholder="Tìm kiếm" (focus)="isFocusingInput = true" (blur)="isFocusingInput = false" />
                 </div>
                 <button
                     mat-icon-button
                     class="searchform-keyboard"
-                    aria-label="search">
+                    aria-label="search"
+                    >
                     <img
                         src="https://www.gstatic.com/inputtools/images/tia.png"
                         width="19px"
                         height="11px"
-                        alt="" />
+                        alt="search-icon" />
                 </button>
             </form>
         </div>

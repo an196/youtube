@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, HostListener, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 
@@ -22,8 +22,9 @@ const MICRO_ICON =
     templateUrl: './searchbar.component.html',
     styleUrls: ['./searchbar.component.scss'],
 })
-export class SearchbarComponent implements OnInit {
+export class SearchbarComponent implements OnInit, AfterViewChecked {
     onMobile!: boolean;
+    isFocusingInput: boolean = false;
 
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
@@ -47,6 +48,10 @@ export class SearchbarComponent implements OnInit {
 
     ngOnInit(): void {
         this.initState();
+    }
+
+    ngAfterViewChecked(): void {
+        console.log(this.isFocusingInput);
     }
 
     initState() {

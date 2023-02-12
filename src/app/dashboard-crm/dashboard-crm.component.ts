@@ -16,7 +16,7 @@ export class DashboardCrmComponent implements OnInit, OnDestroy {
     public showVideos!: Video[][];
     private itemPerRow = 4;
     private countLoop = 2;
-    _videos !:Video[];
+    _videos: Video[] = [...videos];
     private tempVideos!: Video[] | any;
 
     @HostListener('window:resize', ['$event'])
@@ -32,26 +32,26 @@ export class DashboardCrmComponent implements OnInit, OnDestroy {
         //get data
         this.videoService.getVideos().subscribe(
             (results: Video[]) => {
-                this._videos = [...results];
-
-                //init view
-                this.observer = new ResizeObserver(entries => {
-                    this.zone.run(() => {
-                        this.width$.next(entries[0].contentRect.width);
-
-                    });
-                    this.onDashboardToggle();
-                });
-
-                this.observer.observe(this.host.nativeElement);
-
-                this.getTempVideos();
-                this.showVideos = this.fillData();
-                this.initItemPerRow();
+                if (results && results.length > 0)
+                    this._videos = [...results];
             },
             err => console.log(err)
         );
 
+        //init view
+        this.observer = new ResizeObserver(entries => {
+            this.zone.run(() => {
+                this.width$.next(entries[0].contentRect.width);
+
+            });
+            this.onDashboardToggle();
+        });
+
+        this.observer.observe(this.host.nativeElement);
+
+        this.getTempVideos();
+        this.showVideos = this.fillData();
+        this.initItemPerRow();
 
     }
 
@@ -99,12 +99,12 @@ export class DashboardCrmComponent implements OnInit, OnDestroy {
     }
 
     getTempVideos() {
-        if(this._videos){
+        if (this._videos) {
             this.tempVideos = [...this._videos.slice(0, this.itemPerRow * this.countLoop)];
-        }else{
+        } else {
             this.tempVideos = [...videos.slice(0, this.itemPerRow * this.countLoop)];
         }
-       
+
     }
 
     popVideo() {
@@ -131,7 +131,7 @@ export class DashboardCrmComponent implements OnInit, OnDestroy {
 
     }
 
-    getVideos(){
-        
+    getVideos() {
+
     }
 }

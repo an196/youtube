@@ -16,20 +16,23 @@
 .search-block {
     display: flex;
     flex-direction: row;
-    border-radius: 20px;
-    border: 1px solid #303030;
+   
     overflow: hidden;
-    margin-right: 12px;
     flex-grow: 1;
     flex-shrink: 1;
+    margin-left: 48px;
 }
 
 .searchbar-item {
     display: flex;
     flex-grow: 1;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid #303030;
 }
 
 .search-form {
+    width: fit-content;
     display: flex;
     flex-direction: row;
     outline: #065fd4;
@@ -43,20 +46,25 @@
 
 .searchform-icon {
     width: 48px;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    margin-right: -24px;
+    padding: 0 10px;
 }
 
 .searchform-icon-search {
     width: 20px;
     height: 20px;
     margin-top: -6px;
+
 }
 
 .searchform-input {
     flex: 1 1 0;
     display: flex;
+    margin-left: 20px;
 }
 
 .searchform-input input {
@@ -70,6 +78,7 @@
     font-size: 16px;
     font-weight: 400;
     width: 10px;
+    max-width: 488px;
 }
 
 .searchform-keyboard {
@@ -88,7 +97,9 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: rgba($color: #fff, $alpha: 0.08);
+    background-color: rgba($color: #f1f1f1, $alpha: 0.08);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .toolbar-icon-search-item {
@@ -103,11 +114,30 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background: rgba($color: #fff, $alpha: 0.1);
+    background: rgba($color: #f1f1f1, $alpha: 0.1);
     cursor: pointer;
+    margin-left: 12px;
+
+    &:hover{
+        background: rgba($color: #f1f1f1, $alpha: 0.2);
+    }
 }
 
 .toolbar-icon-micro-item {
     width: 24px;
     height: 24px;
+}
+
+.display-div{
+    display: none;
+    position: absolute;
+    left: 0px;
+}
+
+.search-block-toggle{
+    margin-left: 0px;
+}
+
+.search-item-toggle{
+    border: 1px solid #3ea6ff;
 }
