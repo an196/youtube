@@ -1,9 +1,5 @@
 # facebook
 fackbook clone
-
-## Package
-- Angular
-- Scss
   
 ## Description
   Youtube clone with:
