@@ -61,6 +61,10 @@ $extra-extra-large: 1536px;
             }
 
             .meta {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                
                 .meta-rich-content {
                     margin-top: 12px;
                     margin-bottom: 4px;
@@ -145,5 +149,6 @@ $extra-extra-large: 1536px;
     .menu-icon {
         width: 24px;
         height: 24px;
+        color: $primary-text;
     }
 }

@@ -1,4 +1,6 @@
 import { Component, ElementRef, HostListener, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { Video } from 'app/interface/video.interface';
+import { VideoService } from 'app/services/video.service';
 import { videos } from 'data/dummy.data';
 import { BehaviorSubject } from 'rxjs';
 
@@ -11,34 +13,46 @@ export class DashboardCrmComponent implements OnInit, OnDestroy {
     width$ = new BehaviorSubject<number>(0);
     private observer!: any;
 
-    public showVideos!: Object[][];
+    public showVideos!: Video[][];
     private itemPerRow = 4;
     private countLoop = 2;
-    private tempVideos!: Array<any>;
+    _videos !:Video[];
+    private tempVideos!: Video[] | any;
 
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
         this.initItemPerRow();
     }
 
-    constructor(private host: ElementRef, private zone: NgZone) {
+    constructor(private host: ElementRef, private zone: NgZone, private videoService: VideoService) {
 
     }
 
     ngOnInit(): void {
-        this.observer = new ResizeObserver(entries => {
-            this.zone.run(() => {
-                this.width$.next(entries[0].contentRect.width);
+        //get data
+        this.videoService.getVideos().subscribe(
+            (results: Video[]) => {
+                this._videos = [...results];
 
-            });
-            this.onDashboardToggle();
-        });
+                //init view
+                this.observer = new ResizeObserver(entries => {
+                    this.zone.run(() => {
+                        this.width$.next(entries[0].contentRect.width);
 
-        this.observer.observe(this.host.nativeElement);
+                    });
+                    this.onDashboardToggle();
+                });
 
-        this.getTempVideos();
-        this.showVideos = this.fillData();
-        this.initItemPerRow();
+                this.observer.observe(this.host.nativeElement);
+
+                this.getTempVideos();
+                this.showVideos = this.fillData();
+                this.initItemPerRow();
+            },
+            err => console.log(err)
+        );
+
+
     }
 
     ngOnDestroy() {
@@ -85,7 +99,12 @@ export class DashboardCrmComponent implements OnInit, OnDestroy {
     }
 
     getTempVideos() {
-        this.tempVideos = [...videos.slice(0, this.itemPerRow * this.countLoop)];
+        if(this._videos){
+            this.tempVideos = [...this._videos.slice(0, this.itemPerRow * this.countLoop)];
+        }else{
+            this.tempVideos = [...videos.slice(0, this.itemPerRow * this.countLoop)];
+        }
+       
     }
 
     popVideo() {
@@ -98,7 +117,7 @@ export class DashboardCrmComponent implements OnInit, OnDestroy {
             this.showVideos[i].push(this.tempVideos.pop());
     }
 
-    onDashboardToggle(){
+    onDashboardToggle() {
         if (this.width$.value > 1774 && this.showVideos[0].length === 4) {
             this.itemPerRow = 5;
             this.getTempVideos();
@@ -109,6 +128,10 @@ export class DashboardCrmComponent implements OnInit, OnDestroy {
             this.getTempVideos();
             this.showVideos = this.fillData();
         }
+
+    }
+
+    getVideos(){
         
     }
 }

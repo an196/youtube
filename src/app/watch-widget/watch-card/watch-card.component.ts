@@ -20,6 +20,6 @@ export class WatchCardComponent implements OnInit{
     }
 
     ngOnInit(): void {
-        this.imgSrc = this.video.infoVideo.thumbnail_s2;
+        this.imgSrc = this.video.infoVideo.thumbnail;
     }
 }

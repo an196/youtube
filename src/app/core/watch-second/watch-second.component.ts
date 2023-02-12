@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Video } from 'app/interface/video.interface';
+import { VideoService } from 'app/services/video.service';
 import { videos } from 'data/dummy.data';
 
 @Component({
@@ -8,9 +10,16 @@ import { videos } from 'data/dummy.data';
 })
 export class WatchSecondComponent implements OnInit {
 
-    public videos = videos;
-    
+    public videos: Video[] = videos;
+    constructor(private videoService: VideoService){
+
+    }
+
     ngOnInit(): void {
-        
+        this.videoService.getVideos().subscribe(
+            (results: Video[]) => {
+                this.videos = [...results];
+            }
+        );
     }
 }
