@@ -7,7 +7,7 @@ import { isDevMode } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class VideoService {
-    private readonly apiUrl: string = (!isDevMode() ? environment.localUrl : environment.baseUrl) + '/video';
+    private readonly apiUrl: string = (isDevMode() ? environment.localUrl : environment.baseUrl) + '/video';
    
     headers!: HttpHeaders;
     constructor(private http: HttpClient) { 
