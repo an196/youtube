@@ -2,10 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Video } from 'app/interface/video.interface';
 import { map, Observable } from 'rxjs';
+import { environment } from 'environments/environment';
+import { isDevMode } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class VideoService {
-    private readonly apiUrl: string = 'http://localhost:8080/video';
+    private readonly apiUrl: string = (isDevMode() ? environment.localUrl : environment.baseUrl) + '/video';
 
     constructor(private http: HttpClient) { }
 

@@ -1,3 +1,4 @@
 export const environment = {
-    production: false,
+    production: true,
+    baseUrl: 'https://youtube-api-chd6.onrender.com'
 };
