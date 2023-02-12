@@ -7,7 +7,7 @@ import { isDevMode } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class VideoService {
-    private readonly apiUrl: string = (isDevMode() ? environment.localUrl : environment.baseUrl) + '/video';
+    private readonly apiUrl: string = (!isDevMode() ? environment.localUrl : environment.baseUrl) + '/video';
    
     headers!: HttpHeaders;
     constructor(private http: HttpClient) { 
@@ -15,6 +15,7 @@ export class VideoService {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
         'Access-Control-Allow-Headers': 'Content-Type',
+        'X-Custom-Header': 'youtube'
       });
     }
 
