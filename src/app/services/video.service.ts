@@ -15,6 +15,7 @@ export class VideoService {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
         'Access-Control-Allow-Headers': 'Content-Type',
+        'X-Custom-Header': 'youtube'
       });
     }
 
