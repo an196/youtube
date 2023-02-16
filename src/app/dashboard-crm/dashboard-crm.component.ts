@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { DoCheck, AfterContentChecked, AfterViewInit, Component, ElementRef, HostListener, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Video } from 'app/shared/interface/video.interface';
 import { VideoService } from 'app/shared/services/video.service';
 import { videos } from 'data/dummy.data';
@@ -9,15 +9,18 @@ import { BehaviorSubject } from 'rxjs';
     templateUrl: './dashboard-crm.component.html',
     styleUrls: ['./dashboard-crm.component.scss'],
 })
-export class DashboardCrmComponent implements OnInit, OnDestroy {
+export class DashboardCrmComponent implements OnInit, AfterContentChecked, AfterViewInit, DoCheck, OnDestroy {
     width$ = new BehaviorSubject<number>(0);
-    private observer!: any;
 
-    public showVideos!: Video[][];
+    private observer!: any;
     private itemPerRow = 4;
     private countLoop = 2;
     _videos: Video[] = [...videos];
     private tempVideos!: Video[] | any;
+
+    public showVideos!: Video[][];
+
+    @ViewChild('dashcard') dashcard!: ElementRef;
 
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
@@ -55,6 +58,18 @@ export class DashboardCrmComponent implements OnInit, OnDestroy {
 
     }
 
+    ngAfterViewInit(): void {
+
+    }
+
+    ngAfterContentChecked(): void {
+
+    }
+
+    ngDoCheck(): void {
+
+    }
+
     ngOnDestroy() {
         this.observer.unobserve(this.host.nativeElement);
     }
@@ -63,23 +78,41 @@ export class DashboardCrmComponent implements OnInit, OnDestroy {
         const innerWidth = window.innerWidth;
 
         if (innerWidth < 1142 && this.showVideos[0].length === 4) {
-            this.popVideo();
+            this.itemPerRow = 3;
+            this.countLoop = 3;
+            this.getTempVideos();
+            this.showVideos = this.fillData();
         }
         if (innerWidth < 888 && this.showVideos[0].length === 3) {
-            this.popVideo();
+            this.itemPerRow = 2;
+            this.countLoop = 4;
+            this.getTempVideos();
+            this.showVideos = this.fillData();
         }
         if (innerWidth < 512 && this.showVideos[0].length === 2) {
-            this.popVideo();
+            this.itemPerRow = 1;
+            this.countLoop = 8;
+            this.getTempVideos();
+            this.showVideos = this.fillData();
         }
 
         if (innerWidth >= 512 && this.showVideos[0].length === 1) {
-            this.pushVideo();
+            this.itemPerRow = 2;
+            this.countLoop = 4;
+            this.getTempVideos();
+            this.showVideos = this.fillData();
         }
         if (innerWidth >= 888 && this.showVideos[0].length === 2) {
-            this.pushVideo();
+            this.itemPerRow = 3;
+            this.countLoop = 3;
+            this.getTempVideos();
+            this.showVideos = this.fillData();
         }
         if (innerWidth >= 1142 && this.showVideos[0].length === 3) {
-            this.pushVideo();
+            this.itemPerRow = 4;
+            this.countLoop = 2;
+            this.getTempVideos();
+            this.showVideos = this.fillData();
         }
     }
 
@@ -105,16 +138,6 @@ export class DashboardCrmComponent implements OnInit, OnDestroy {
             this.tempVideos = [...videos.slice(0, this.itemPerRow * this.countLoop)];
         }
 
-    }
-
-    popVideo() {
-        for (let i = 0; i < this.countLoop; i++)
-            this.tempVideos.push(this.showVideos[i].pop());
-    }
-
-    pushVideo() {
-        for (let i = this.countLoop - 1; i >= 0; i--)
-            this.showVideos[i].push(this.tempVideos.pop());
     }
 
     onDashboardToggle() {
