@@ -26,7 +26,7 @@ export class AuthComponent implements OnInit, AfterViewChecked {
         this.initState();
     }
 
-    ngAfterViewChecked(): void {}
+    constructor(){}
 
     ngOnInit(): void {
         this.showFiller = true;
@@ -35,6 +35,8 @@ export class AuthComponent implements OnInit, AfterViewChecked {
 
         this.initState();
     }
+
+    ngAfterViewChecked(): void {}
 
     initState() {
         const innerWidth = window.innerWidth;

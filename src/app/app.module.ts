@@ -12,6 +12,15 @@ import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
+import { environment } from 'environments/environment';
+import { AuthService } from './shared/services/auth-service';
+
 @NgModule({
     declarations: [AppComponent],
     imports: [
@@ -24,9 +33,15 @@ import { OAuthModule } from 'angular-oauth2-oidc';
         VgBufferingModule,
         VgControlsModule,
         HttpClientModule,
-        OAuthModule
+        OAuthModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireAuthModule,
+        AngularFirestoreModule,
+        AngularFireStorageModule,
+        AngularFireDatabaseModule
     ],
     providers: [
+        AuthService,
     ],
     bootstrap: [AppComponent],
 })
