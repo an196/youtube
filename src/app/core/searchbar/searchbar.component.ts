@@ -51,7 +51,6 @@ export class SearchbarComponent implements OnInit, AfterViewChecked {
     }
 
     ngAfterViewChecked(): void {
-        console.log(this.isFocusingInput);
     }
 
     initState() {

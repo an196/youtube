@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, NgZone, OnDestroy, OnInit } from '@angular/core';
-import { Video } from 'app/interface/video.interface';
-import { VideoService } from 'app/services/video.service';
+import { Video } from 'app/shared/interface/video.interface';
+import { VideoService } from 'app/shared/services/video.service';
 import { videos } from 'data/dummy.data';
 import { BehaviorSubject } from 'rxjs';
 

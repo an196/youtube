@@ -1,21 +1,29 @@
 .sidebar-container {
     display: flex;
     flex-direction: row;
+
+    .sidebar-item {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        border: none;
+        background-color: transparent;
+        color: #f1f1f1;
+        cursor: pointer;
+        margin-right: 8px;
+    }
+    
+    #micro.sidebar-item, #plus-camera.sidebar-item, #notification.sidebar-item{
+        @media screen and (max-width: 500px) {
+            display: none;
+        }
+    }
 }
 
-.sidebar-item {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    border: none;
-    background-color: transparent;
-    color: #f1f1f1;
-    cursor: pointer;
-    margin-right: 8px;
-}
 
 .sidebar-item:hover {
     background: rgba($color: #fff, $alpha: 0.1);

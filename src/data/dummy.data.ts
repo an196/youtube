@@ -74,6 +74,7 @@ export const videos = [
            embedlink: 'https://www.youtube.com/embed/7fqhD6WCsyc',
             briefDes: '. Vui lòng không reup video của Thỏ dưới mọi hình thức. #HHCT #T7M #thobaymau Nếu ...',
             timePost: '1 năm trước',
+            viewCount: '16 N lượt xem',
             time: '1 giờ',
             gif: 'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/thumbnails2%2Fmqdefault_6s_5.webp?alt=media&token=2c712124-e346-44c8-b079-8238e7e25ba1',
         },

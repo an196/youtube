@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Video } from 'app/interface/video.interface';
+import { Video } from '../interface/video.interface';
 import { map, Observable } from 'rxjs';
 import { environment } from 'environments/environment';
 import { isDevMode } from '@angular/core';
