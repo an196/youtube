@@ -14,9 +14,6 @@ const THUMBUP_ICON =
 
 export class IconSvgExample {
     constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-        // Note that we provide the icon here as a string literal here due to a limitation in
-        // Stackblitz. If you want to provide the icon from a URL, you can use:
-        // `iconRegistry.addSvgIcon('thumbs-up', sanitizer.bypassSecurityTrustResourceUrl('icon.svg'));`
         iconRegistry.addSvgIconLiteral(
             'thumbs-up',
             sanitizer.bypassSecurityTrustHtml(THUMBUP_ICON)

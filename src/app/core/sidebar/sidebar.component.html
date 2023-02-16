@@ -30,10 +30,13 @@
             aria-label="notification">
         </mat-icon>
     </button>
-    <button class="sidebar-item">
+    <button class="sidebar-item"  mat-button [matMenuTriggerFor]="menu">
         <img
             class="sidebar-item-imgprofile"
             src="https://media.istockphoto.com/id/1371797889/vector/young-smiling-man-avatar-3d-vector-people-character-illustration-cartoon-minimal-style-3d.jpg?b=1&s=170667a&w=0&k=20&c=RdE6XawHrhZaeo__bXATnZtOzWxTOIWBU2pzVxW8NTY="
             alt="" />
+            <mat-menu  #menu="matMenu">
+                <app-profile-popup></app-profile-popup>
+            </mat-menu>
     </button>
 </div>

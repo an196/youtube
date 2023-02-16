@@ -10,6 +10,7 @@ export class VideoService {
     private readonly apiUrl: string = (isDevMode() ? environment.localUrl : environment.baseUrl) + '/video';
    
     headers!: HttpHeaders;
+    
     constructor(private http: HttpClient) { 
       this.headers = new HttpHeaders();
       this.headers = this.headers

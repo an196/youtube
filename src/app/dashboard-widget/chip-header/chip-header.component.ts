@@ -28,7 +28,8 @@ export class ChipHeaderComponent implements AfterViewInit {
         this.resizeWorks();
     }
 
-    ngAfterViewInit() {}
+    ngAfterViewInit() {
+    }
 
     onButtonClick(direction: string) {
         const { scrollLeft, clientWidth } = this.chipContainer.nativeElement;

@@ -63,3 +63,27 @@ export const icons = {
     questions: QUESTIONS_ICON,
     feedback: FEEDBACK_ICON,
 };
+
+export const resgiteryIcons = [
+    { name: 'home', icon: icons.home },
+    { name: 'shorts', icon: icons.shorts },
+    { name: 'channel', icon: icons.channel },
+    { name: 'library', icon: icons.library },
+    { name: 'videos-watched', icon: icons.circle_clock },
+    { name: 'your-videos', icon: icons.play },
+    { name: 'watch-it-later', icon: icons.clock },
+    { name: 'videos-liked', icon: icons.thumbup },
+    { name: 'popular', icon: icons.fire },
+    { name: 'music', icon: icons.music },
+    { name: 'game', icon: icons.heartgame },
+    { name: 'news', icon: icons.newspaper },
+    { name: 'sports', icon: icons.cup },
+    { name: 'creator-studio', icon: icons.createyt },
+    { name: 'youTube-music', icon: icons.playyt },
+    { name: 'youTube-kids', icon: icons.playyt2 },
+    { name: 'youTube-tv', icon: icons.palyyt3 },
+    { name: 'setting', icon: icons.setting },
+    { name: 'log-report', icon: icons.flag },
+    { name: 'help', icon: icons.questions },
+    { name: 'feedback', icon: icons.feedback },
+]

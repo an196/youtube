@@ -6,10 +6,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DashcardComponent } from './dashcard/dashcard.component';
 import { SideLoginComponent } from './side-login/side-login.component';
+import { ProfilePopupComponent } from './profile-popup/profile-popup.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
-    declarations: [ChipHeaderComponent, DashcardComponent, SideLoginComponent],
-    imports: [CommonModule, MatChipsModule, MatButtonModule, MatIconModule],
-    exports: [ChipHeaderComponent, DashcardComponent, SideLoginComponent],
+    declarations: [ChipHeaderComponent, DashcardComponent, SideLoginComponent, ProfilePopupComponent],
+    imports: [CommonModule, MatChipsModule, MatButtonModule, MatIconModule, MatMenuModule],
+    exports: [ChipHeaderComponent, DashcardComponent, SideLoginComponent,ProfilePopupComponent],
 })
 export class DashboardWidgetModule { }
