@@ -1,6 +1,6 @@
 export const videos = [
     {
-        _idVideo: 'PzdkimLD8Yc',
+        _idVideo: 'rY_KaL0wPGU',
         infoOwner: {
             channelName: 'THỎ BẢY MÀU',
             imgProfile:
@@ -16,11 +16,13 @@ export const videos = [
             timePost: '1 năm trước',
             viewCount: '16 N lượt xem',
             time: '1 giờ',
-            gif: 'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/thumbnails2%2Fmqdefault_6s_9.webp?alt=media&token=3e06210a-b413-4a01-9797-9e5c9fc2d66d'
+            duration: '3M45',
+            gif: 'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/thumbnails2%2Fmqdefault_6s_9.webp?alt=media&token=3e06210a-b413-4a01-9797-9e5c9fc2d66d',
+            
         },
     },
     {
-        _idVideo: 'U_6xHKGf3Ho',
+        _idVideo: 'fs_2D2VGuHo',
         infoOwner: {
             channelName: 'THỎ BẢY MÀU',
             imgProfile:
@@ -36,11 +38,12 @@ export const videos = [
             timePost: '1 năm trước',
             viewCount: '16 N lượt xem',
             time: '1 giờ',
+            duration: '5M16',
             gif: 'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/thumbnails2%2Fmqdefault_6s_10.webp?alt=media&token=69f530d0-a624-4be6-8f66-19024d9a0860'
         },
     },
     {
-        _idVideo: 'rY_KaL0wPGU',
+        _idVideo: 'U_6xHKGf3Ho',
         infoOwner: {
             channelName: 'THỎ BẢY MÀU',
             imgProfile:
@@ -56,6 +59,7 @@ export const videos = [
             timePost: '1 năm trước',
             viewCount: '16 N lượt xem',
             time: '1 giờ',
+            duration: '21M14',
             gif: 'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/thumbnails2%2Fmqdefault_6s_6.webp?alt=media&token=739cf48e-55d4-48c6-9aef-e02907c155da'
         },
     },
@@ -76,11 +80,12 @@ export const videos = [
             timePost: '1 năm trước',
             viewCount: '16 N lượt xem',
             time: '1 giờ',
+            duration: '3M6',
             gif: 'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/thumbnails2%2Fmqdefault_6s_5.webp?alt=media&token=2c712124-e346-44c8-b079-8238e7e25ba1',
         },
     },
     {
-        _idVideo: 'mltbTWMH4',
+        _idVideo: 'a2Nr6bubN8Y',
         infoOwner: {
             channelName: 'THỎ BẢY MÀU',
             imgProfile:
@@ -96,6 +101,7 @@ export const videos = [
             timePost: '1 năm trước',
             viewCount: '16 N lượt xem',
             time: '1 giờ',
+            duration: '5M27',
             gif: 'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/thumbnails2%2Fmqdefault_6s_8.webp?alt=media&token=d1528075-b41b-446e-b121-abf65f214af5',
         },
     },
@@ -116,6 +122,7 @@ export const videos = [
             timePost: '1 năm trước',
             viewCount: '16 N lượt xem',
             time: '1 giờ',
+            duration: '8M00',
             gif: 'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/thumbnails2%2Fmqdefault_6s_11.webp?alt=media&token=050eb17c-4d97-4bdf-8b39-53a96cc1cd54',
         },
     },
@@ -136,6 +143,7 @@ export const videos = [
             timePost: '1 năm trước',
             viewCount: '16 N lượt xem',
             time: '1 giờ',
+            duration: '4M37',
             gif: 'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/thumbnails2%2Fmqdefault_6s.webp?alt=media&token=9e16ef8e-ce9e-4fb0-b695-3ddc0b453b7c'
         },
     },
@@ -156,6 +164,7 @@ export const videos = [
             timePost: '1 năm trước',
             viewCount: '16 N lượt xem',
             time: '1 giờ',
+            duration: '9M12',
             gif: 'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/thumbnails2%2Fmqdefault_6s_4.webp?alt=media&token=b5d2639b-ddd9-4a5d-a907-ad2dadb84d45',
         },
     },
@@ -176,6 +185,7 @@ export const videos = [
             timePost: '1 năm trước',
             viewCount: '16 N lượt xem',
             time: '1 giờ',
+            duration: '4M25',
             gif: 'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/thumbnails2%2Fmqdefault_6s_2.webp?alt=media&token=f83b596f-1d92-49af-94e9-6b49ab792052',
         },
     },
@@ -196,6 +206,7 @@ export const videos = [
             timePost: '1 năm trước',
             viewCount: '16 N lượt xem',
             time: '1 giờ',
+            duration: '4M29',
             gif: 'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/thumbnails2%2Fmqdefault_6s_7.webp?alt=media&token=4b288a35-71e0-47fa-a3a4-82db2eec6678',
         },
     },

@@ -1,9 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
 
 import { menus } from './menus-elements';
 import { icons } from './icons';
+import { IconService } from 'app/shared/services/icon.service';
 
 @Component({
     selector: 'app-metadata-top-row',
@@ -19,31 +18,8 @@ export class MetadataTopRowComponent implements OnInit {
         this.initMenu();
     }
 
-    constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-        iconRegistry.addSvgIconLiteral(
-            'thumbup',
-            sanitizer.bypassSecurityTrustHtml(icons.thumbup)
-        );
-        iconRegistry.addSvgIconLiteral(
-            'thumbdown',
-            sanitizer.bypassSecurityTrustHtml(icons.thumbdown)
-        );
-        iconRegistry.addSvgIconLiteral(
-            'share',
-            sanitizer.bypassSecurityTrustHtml(icons.share)
-        );
-        iconRegistry.addSvgIconLiteral(
-            'scissor',
-            sanitizer.bypassSecurityTrustHtml(icons.scissor)
-        );
-        iconRegistry.addSvgIconLiteral(
-            'threelineplus',
-            sanitizer.bypassSecurityTrustHtml(icons.threelineplus)
-        );
-        iconRegistry.addSvgIconLiteral(
-            'threedots',
-            sanitizer.bypassSecurityTrustHtml(icons.threedots)
-        );
+    constructor(private iconService: IconService) {
+        iconService.registerIcons(icons);
     }
 
     ngOnInit(): void {

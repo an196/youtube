@@ -18,6 +18,7 @@ import { WatchSecondComponent } from './watch-second/watch-second.component';
 import { WatchWidgetModule } from 'app/watch-widget/watch-widget.module';
 import { VgCoreModule } from '@videogular/ngx-videogular/core';
 import { DashboardWidgetModule } from 'app/dashboard-widget/dashboard-widget.module';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
     declarations: [
@@ -40,6 +41,7 @@ import { DashboardWidgetModule } from 'app/dashboard-widget/dashboard-widget.mod
         WatchWidgetModule,
         VgCoreModule,
         DashboardWidgetModule,
+        MatMenuModule
     ],
     exports: [
         SidemenuComponent,

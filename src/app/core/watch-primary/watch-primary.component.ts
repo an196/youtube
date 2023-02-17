@@ -8,11 +8,11 @@ import {
     ViewChild,
 } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { MatIconRegistry } from '@angular/material/icon';
 
 import { icons } from './watch-primary-icon';
 import { menus } from './menu-elements';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { IconService } from 'app/shared/services/icon.service';
 
 @Component({
     selector: 'app-watch-primary',
@@ -36,35 +36,12 @@ export class WatchPrimaryComponent implements OnInit, AfterContentInit {
     }
 
     constructor(
-        iconRegistry: MatIconRegistry,
         sanitizer: DomSanitizer,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private iconService: IconService,
     ) {
-        iconRegistry.addSvgIconLiteral(
-            'thumbup',
-            sanitizer.bypassSecurityTrustHtml(icons.thumbup)
-        );
-        iconRegistry.addSvgIconLiteral(
-            'thumbdown',
-            sanitizer.bypassSecurityTrustHtml(icons.thumbdown)
-        );
-        iconRegistry.addSvgIconLiteral(
-            'share',
-            sanitizer.bypassSecurityTrustHtml(icons.share)
-        );
-        iconRegistry.addSvgIconLiteral(
-            'scissor',
-            sanitizer.bypassSecurityTrustHtml(icons.scissor)
-        );
-        iconRegistry.addSvgIconLiteral(
-            'threelineplus',
-            sanitizer.bypassSecurityTrustHtml(icons.threelineplus)
-        );
-        iconRegistry.addSvgIconLiteral(
-            'threedots',
-            sanitizer.bypassSecurityTrustHtml(icons.threedots)
-        );
-
+       
+        iconService.registerIcons(icons);
         this.route.paramMap.subscribe((params: ParamMap) => {
             this._idVideo = params.get('id');
         });

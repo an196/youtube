@@ -1,0 +1,36 @@
+<section class="profile-container">
+  <div class="menu-block">
+    <button mat-menu-item *ngFor="let menu of menu1" class="menu-item">
+      <mat-icon [svgIcon]="menu.icon"></mat-icon>
+      <span>{{menu.title}}</span>
+    </button>
+  </div>
+  <div class="horizone-line"></div>
+  <div class="menu-block">
+    <button mat-menu-item *ngFor="let menu of menu2" class="menu-item">
+      <mat-icon [svgIcon]="menu.icon"></mat-icon>
+      <span>{{menu.title}}</span>
+    </button>
+  </div>
+  <div class="horizone-line"></div>
+  <div class="menu-block">
+    <button mat-menu-item *ngFor="let menu of menu3" class="menu-item">
+      <mat-icon [svgIcon]="menu.icon"></mat-icon>
+      <span>{{menu.title}}</span>
+    </button>
+  </div>
+  <div class="horizone-line"></div>
+  <div class="menu-block">
+    <button mat-menu-item *ngFor="let menu of menu4" class="menu-item">
+      <mat-icon [svgIcon]="menu.icon"></mat-icon>
+      <span>{{menu.title}}</span>
+    </button>
+  </div>
+  <div class="horizone-line"></div>
+  <div class="menu-block">
+    <button mat-menu-item *ngFor="let menu of menu5" class="menu-item">
+      <mat-icon [svgIcon]="menu.icon"></mat-icon>
+      <span>{{menu.title}}</span>
+    </button>
+  </div>
+</section>
