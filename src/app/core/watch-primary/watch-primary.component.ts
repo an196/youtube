@@ -38,10 +38,10 @@ export class WatchPrimaryComponent implements OnInit, AfterContentInit {
     constructor(
         sanitizer: DomSanitizer,
         private route: ActivatedRoute,
-        private iconSerVice: IconService,
+        private iconService: IconService,
     ) {
        
-        iconSerVice.registerIcons(icons);
+        iconService.registerIcons(icons);
         this.route.paramMap.subscribe((params: ParamMap) => {
             this._idVideo = params.get('id');
         });

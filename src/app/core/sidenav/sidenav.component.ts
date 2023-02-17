@@ -9,7 +9,7 @@ import { IconService } from 'app/shared/services/icon.service';
     styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent {
-    constructor(private iconSerVice: IconService) {
-        iconSerVice.registerIcons(icons);
+    constructor(private iconService: IconService) {
+        iconService.registerIcons(icons);
     }
 }

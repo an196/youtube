@@ -11,7 +11,7 @@ import { icons } from './icons-element';
 export class DashcardComponent {
     @Input() video: any;
 
-    constructor(private iconSerVice: IconService) {
-        iconSerVice.registerIcons(icons);
+    constructor(private iconService: IconService) {
+        iconService.registerIcons(icons);
     }
 }

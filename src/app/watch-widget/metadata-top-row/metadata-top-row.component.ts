@@ -18,8 +18,8 @@ export class MetadataTopRowComponent implements OnInit {
         this.initMenu();
     }
 
-    constructor(private iconSerVice: IconService) {
-        iconSerVice.registerIcons(icons);
+    constructor(private iconService: IconService) {
+        iconService.registerIcons(icons);
     }
 
     ngOnInit(): void {

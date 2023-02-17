@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
+import { customIcon } from '../interface/customIcon.interface';
 
 @Injectable({ providedIn: 'root' })
 export class IconService {
@@ -14,14 +15,14 @@ export class IconService {
 
     }
 
-    public registerIcon(name: string, icon: string) {
+    public registerIcon(icon: customIcon) {
         this._iconRegistry.addSvgIconLiteral(
-            name,
-            this._sanitizer.bypassSecurityTrustHtml(icon)
+            icon.name,
+            this._sanitizer.bypassSecurityTrustHtml(icon.icon)
         );
     }
 
-    public registerIcons(icons: any) {
+    public registerIcons(icons: customIcon[]) {
         for (const icon of icons) {
             this._iconRegistry.addSvgIconLiteral(
                 icon.name,

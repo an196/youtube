@@ -10,8 +10,8 @@ import { icons } from './icons-elements';
 export class WatchCardComponent implements OnInit{
     @Input() video!: any; 
     imgSrc: string = '';
-    constructor(private iconSerVice: IconService) {
-        iconSerVice.registerIcons(icons);
+    constructor(private iconService: IconService) {
+        iconService.registerIcons(icons);
     }
 
     ngOnInit(): void {
