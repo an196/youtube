@@ -1,8 +1,8 @@
-# facebook
-fackbook clone
+# youtube
+youtube clone
   
 ## Description
-  Youtube clone with:
+  Youtube clone with todo:
   - Dashboard page
   - Watch details video page
   - Fetch api
