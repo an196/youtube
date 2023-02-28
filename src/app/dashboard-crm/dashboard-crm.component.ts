@@ -1,8 +1,13 @@
 import { DoCheck, AfterContentChecked, AfterViewInit, Component, ElementRef, HostListener, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Short } from 'app/shared/interface/short.interface';
 import { Video } from 'app/shared/interface/video.interface';
+import { IconService } from 'app/shared/services/icon.service';
+import { ShortService } from 'app/shared/services/short.service';
 import { VideoService } from 'app/shared/services/video.service';
-import { videos } from 'data/dummy.data';
+import { videos, shorts } from 'data/dummy.data';
 import { BehaviorSubject } from 'rxjs';
+
+import { icons } from './icon-element';
 
 @Component({
     selector: 'app-dashboard-crm',
@@ -10,15 +15,17 @@ import { BehaviorSubject } from 'rxjs';
     styleUrls: ['./dashboard-crm.component.scss'],
 })
 export class DashboardCrmComponent implements OnInit, AfterContentChecked, AfterViewInit, DoCheck, OnDestroy {
-    width$ = new BehaviorSubject<number>(0);
+    private width$ = new BehaviorSubject<number>(0);
 
     private observer!: any;
     private itemPerRow = 4;
     private countLoop = 2;
     _videos: Video[] = [...videos];
     private tempVideos!: Video[] | any;
-
     public showVideos!: Video[][];
+
+    public shortsPerRow: number = 8;
+    _shorts:  Short[] = [...shorts];
 
     @ViewChild('dashcard') dashcard!: ElementRef;
 
@@ -27,12 +34,14 @@ export class DashboardCrmComponent implements OnInit, AfterContentChecked, After
         this.initItemPerRow();
     }
 
-    constructor(private host: ElementRef, private zone: NgZone, private videoService: VideoService) {
-
+    constructor(private host: ElementRef, private zone: NgZone, private videoService: VideoService,
+        private shortService: ShortService,
+        private iconService: IconService) {
+        iconService.registerIcons(icons);
     }
 
     ngOnInit(): void {
-        //get data
+        //get video data
         this.videoService.getVideos().subscribe(
             (results: Video[]) => {
                 if (results && results.length > 0)
@@ -41,6 +50,16 @@ export class DashboardCrmComponent implements OnInit, AfterContentChecked, After
             err => console.log(err)
         );
 
+        this.shortService.getShorts().subscribe(
+            (results: Short[]) => {
+                if (results && results.length > 0)
+                    this._shorts = [...results];
+            },
+            err => console.log(err)
+        );
+
+        //get video data
+        
         //init view
         this.observer = new ResizeObserver(entries => {
             this.zone.run(() => {
@@ -48,6 +67,7 @@ export class DashboardCrmComponent implements OnInit, AfterContentChecked, After
 
             });
             this.onDashboardToggle();
+            this.initShortsPerRow();
         });
 
         this.observer.observe(this.host.nativeElement);
@@ -116,6 +136,58 @@ export class DashboardCrmComponent implements OnInit, AfterContentChecked, After
         }
     }
 
+    initShortsPerRow(): void{
+        if(this.width$.value <= 1337 &&  this.shortsPerRow === 8){
+            this.shortsPerRow = this.shortsPerRow - 1;
+            this._shorts= [...shorts.slice(0,this.shortsPerRow)];
+        }
+        if(this.width$.value <= 1299  && this.shortsPerRow === 7){
+            this.shortsPerRow = this.shortsPerRow - 1;
+            this._shorts= [...shorts.slice(0,this.shortsPerRow)];
+        }
+        if(this.width$.value <= 984  && this.shortsPerRow === 6){
+            this.shortsPerRow = this.shortsPerRow - 1;
+            this._shorts= [...shorts.slice(0,this.shortsPerRow)];
+        }
+        if(this.width$.value <= 976  && this.shortsPerRow === 5){
+            this.shortsPerRow = this.shortsPerRow - 1;
+            this._shorts= [...shorts.slice(0,this.shortsPerRow)];
+        }
+        if(this.width$.value <= 648  && this.shortsPerRow === 4){
+            this.shortsPerRow = this.shortsPerRow - 1;
+            this._shorts= [...shorts.slice(0,this.shortsPerRow)];
+        }
+        if(this.width$.value <= 646  && this.shortsPerRow === 3){
+            this.shortsPerRow = this.shortsPerRow - 1;
+            this._shorts= [...shorts.slice(0,this.shortsPerRow)];
+        }
+        
+        if(this.width$.value > 646  && this.shortsPerRow === 2){
+            this.shortsPerRow = this.shortsPerRow + 1;
+            this._shorts= [...shorts.slice(0,this.shortsPerRow)];
+        }
+        if(this.width$.value > 648  && this.shortsPerRow === 3){
+            this.shortsPerRow = this.shortsPerRow + 1;
+            this._shorts= [...shorts.slice(0,this.shortsPerRow)];
+        }
+        if(this.width$.value > 976  && this.shortsPerRow === 4){
+            this.shortsPerRow = this.shortsPerRow + 1;
+            this._shorts= [...shorts.slice(0,this.shortsPerRow)];
+        }
+        if(this.width$.value > 984  && this.shortsPerRow === 5){
+            this.shortsPerRow = this.shortsPerRow + 1;
+            this._shorts= [...shorts.slice(0,this.shortsPerRow)];
+        }
+        if(this.width$.value > 1299  && this.shortsPerRow === 6){
+            this.shortsPerRow = this.shortsPerRow + 1;
+            this._shorts= [...shorts.slice(0,this.shortsPerRow)];
+        }
+        if(this.width$.value > 1337 &&  this.shortsPerRow === 7){
+            this.shortsPerRow = this.shortsPerRow + 1;
+            this._shorts= [...shorts.slice(0,this.shortsPerRow)];
+        }
+    }
+
     fillData(): any {
         let boxVideos = [];
 
@@ -152,6 +224,7 @@ export class DashboardCrmComponent implements OnInit, AfterContentChecked, After
             this.showVideos = this.fillData();
         }
 
+        this.initShortsPerRow();
     }
 
     getVideos() {

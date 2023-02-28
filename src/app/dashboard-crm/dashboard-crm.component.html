@@ -10,5 +10,16 @@
         <section class="dashboard-content" *ngFor="let rowItems of showVideos">
             <app-dashcard *ngFor="let i of rowItems" [video]="i"></app-dashcard>
         </section>
+
+        <div class="dashboard-divider"></div>
+
+        <div class="dashboard-content-short">
+            <mat-icon svgIcon="short" class="dashboard-content-short-icon"></mat-icon>
+             <h1>Short</h1>
+         </div>
+
+        <section class="dashboard-content" >
+            <app-short-small [short]="short" *ngFor="let short of _shorts"></app-short-small>
+        </section>
     </div>
 </section>

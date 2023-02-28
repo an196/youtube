@@ -54,4 +54,12 @@ $primary-text: #f1f1f1;
     ::ng-deep app-dashboard-crm.ng-star-inserted {
         width: 100%;
     }
+
+    ::ng-deep app-short-crm.ng-star-inserted{
+        width: 100%;
+        height: calc(100vh - 56px);
+        background-color: $primary;
+
+    }
+
 }

@@ -1,14 +1,12 @@
 <mat-nav-list class="item-container">
-    <mat-list-item
-        class="item-list"
-        *ngFor="let menu of menus"
-        [ngClass]="{ 'item-list-active': menu.opened == true }">
+    <mat-list-item class="item-list" *ngFor="let menu of menus" [ngClass]="{ 'item-list-active': menu.opened == true }"
+        (click)="changeMenu(menu.name)">
         <div class="item-list-block">
-            <mat-icon
-                class="item-menu-icon"
-                svgIcon="{{ menu.icon }}"
-                aria-hidden="false"></mat-icon>
-            <a href="..." class="item-menu-label">{{ menu.titleVI }}</a>
+            <a [href]="menu.link+ '/1'" class="item-list-link" >
+                <mat-icon class="item-menu-icon" svgIcon="{{ menu.icon }}" aria-hidden="false">
+                </mat-icon>
+                <span class="item-menu-label">{{ menu.titleVI }}</span>
+            </a>
         </div>
     </mat-list-item>
 </mat-nav-list>

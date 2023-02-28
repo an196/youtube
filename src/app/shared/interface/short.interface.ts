@@ -1,9 +1,9 @@
-export interface Video {
+export interface Short {
     infoOwner?: InfoOwner;
-    infoVideo?: InfoVideo;
+    infoShort?: InfoShort;
     __v?: number;
     _id?: String;
-    _idVideo: String;
+    _idShort: String;
 }
 
 export interface InfoOwner {
@@ -12,14 +12,13 @@ export interface InfoOwner {
     channelLink: string
 }
 
-export interface InfoVideo {
+export interface InfoShort {
     title: string
     thumbnail: string
-    embedlink: string
+    video: string,
     briefDes: string
     timePost: string
     viewCount: string
     time: string
     duration: string
-    gif: string
 }

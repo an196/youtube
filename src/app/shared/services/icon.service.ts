@@ -6,8 +6,8 @@ import { customIcon } from '../interface/customIcon.interface';
 @Injectable({ providedIn: 'root' })
 export class IconService {
 
-    _iconRegistry!: MatIconRegistry;
-    _sanitizer!: DomSanitizer;
+    private _iconRegistry!: MatIconRegistry;
+    private _sanitizer!: DomSanitizer;
 
     constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
         this._iconRegistry = iconRegistry;

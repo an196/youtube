@@ -1,5 +1,5 @@
 <div class="sidemenu-container">
-    <app-sidemenu-item [menus]="menus"></app-sidemenu-item>
+    <app-sidemenu-item (currentMenuEvent) = "changeCurrentMenu($event)" [menus]="menus"></app-sidemenu-item>
     <mat-divider class="divider"></mat-divider>
     <app-sidemenu-item [menus]="menus2"></app-sidemenu-item>
     <mat-divider class="divider"></mat-divider>

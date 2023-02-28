@@ -12,6 +12,7 @@ const routes: Routes = [
         loadChildren: () =>
             import('../pages/watch/watch.module').then(m => m.WatchModule),
     },
+    
     { path: '**', redirectTo: 'auth/dashboard' },
 ];
 

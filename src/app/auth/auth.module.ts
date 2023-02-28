@@ -8,6 +8,7 @@ import { CoreModule } from '../core/core.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { DashboardCrmModule } from 'app/dashboard-crm/dashboard-crm.module';
+import { ShortCrmModule } from 'app/short-crm/short-crm.module';
 
 @NgModule({
     declarations: [AuthComponent],
@@ -18,6 +19,7 @@ import { DashboardCrmModule } from 'app/dashboard-crm/dashboard-crm.module';
         MatToolbarModule,
         CoreModule,
         DashboardCrmModule,
+        ShortCrmModule,
     ],
     providers: [],
 })

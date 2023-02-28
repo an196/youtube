@@ -7,7 +7,7 @@ import {
     OnInit,
     ViewChild,
 } from '@angular/core';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 import { icons } from './watch-primary-icon';
 import { menus } from './menu-elements';
@@ -27,7 +27,7 @@ export class WatchPrimaryComponent implements OnInit, AfterContentInit {
     private originMenus = [...menus];
 
     _idVideo!: string | null;
-    videoUrl!: any | null;
+    videoUrl!: SafeResourceUrl;
 
     @HostListener('window:resize', ['$event'])
     onResize(event: any) {
@@ -46,7 +46,7 @@ export class WatchPrimaryComponent implements OnInit, AfterContentInit {
             this._idVideo = params.get('id');
         });
 
-        const baseURl = 'https://www.youtube.com/embed/' + this._idVideo;
+        const baseURl = 'https://www.youtube.com/embed/' + this._idVideo + '?modestbranding=1';
         this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl(baseURl);
     }
 
