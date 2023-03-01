@@ -62,71 +62,6 @@ $primary-text: #f1f1f1;
                         outline: none;
                     }
                 }
-
-                
-            }
-
-            .bottom-control{
-                bottom: 0;
-                left: 0;
-                padding: 32px 16px 16px 16px;
-                display: flex;
-                position: absolute;
-                flex-direction: column;
-                color: $primary-text;
-                width: 100%;
-
-                .top-row {
-                    margin-bottom: 12px;
-                }
-
-                .bottom-row{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-
-                    .info{
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-start;
-                        align-items: center;
-
-                        a {
-                            text-decoration: none;
-                            text-align: center;
-                            color: $primary-text;
-                        }
-    
-                        img{
-                            width: 36px;
-                            height: 36px;
-                            margin-right: 6px;
-                            border-radius: 50%;
-                        }
-                    }
-                    
-                    .register-btn{
-                        padding: 0 16px 0 16px;
-                        background-color: #fff;
-                        border-radius: 20px;
-                        cursor: pointer;
-
-                        button{
-                            border: none;
-                            background: none;
-                            font-size: 14px;
-                            font-weight: 500;
-                            line-height: 36px;
-                            color: rgb(31, 31, 31);
-                            font-stretch: expanded;
-                            cursor: pointer;
-                        }
-                    }
-                }
-
-                @media screen and (max-width: 600px){
-                    padding-right: 72px;
-                }
             }
         }
 
@@ -141,73 +76,11 @@ $primary-text: #f1f1f1;
             flex-direction: row-reverse;
             align-items: flex-end;
 
-            .short-actions {
-                width: 72px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-end;
-
-                .short-actions-item {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: column;
-
-                    .short-actions-btn {
-                        width: 48px;
-                        height: 48px;
-                        flex: none;
-                        border-radius: 50%;
-                        background-color: rgba($color: #f1f1f1, $alpha: 0.1);
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin-top: 16px;
-
-                        button {
-                            width: 24px;
-                            height: 24px;
-                            border: none;
-                            background: none;
-                            flex: none;
-                            width: fit-content;
-                            cursor: pointer;
-
-                            mat-icon {
-                                color: $primary-text;
-                            }
-                        }
-                    }
-
-                    div {
-                        text-align: center;
-
-                        span {
-                            color: $primary-text;
-                            text-align: center;
-                            text-size-adjust: 100%;
-                            white-space: pre-wrap;
-                            font-size: 14px;
-                            line-height: 20px;
-                            font-weight: 400;
-                            text-transform: none;
-                            letter-spacing: normal;
-                            overflow-wrap: anywhere;
-                        }
-
-                    }
-                }
-            }
-
             @media screen and (max-width: 600px) {
                 width: 100%;
                 padding-bottom: 12px;
 
-                .short-actions .short-actions-item .short-actions-btn{
-                    z-index: 10;
-                }
-                .short-actions .short-actions-item .short-actions-title{
+                app-short-action{
                     z-index: 10;
                 }
             }

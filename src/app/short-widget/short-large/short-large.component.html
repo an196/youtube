@@ -20,31 +20,10 @@
                 </div>
 
             </div>
-            <div class="bottom-control">
-                <div class="top-row">
-                    <span>Chị em sắp thành idol</span>
-                </div>
-                <div class="bottom-row">
-                    <div class="info">
-                        <img src="https://yt3.ggpht.com/nUn1DIIVQtqxdI5ubE_O8VhmT38NTA_7vIhS__sZsJfunY1uheawMvatoP9WMKu9nF8thJHK1g=s68-c-k-c0x00ffffff-no-rj"
-                            alt="">
-                        <div> <a href="">Tho bay mau</a></div>
-                    </div>
-                    <div class="register-btn">
-                        <button>Đăng ký</button>
-                    </div>
-                </div>
-            </div>
+            <app-bottom-control></app-bottom-control>
         </div>
         <div class="short-overlay">
-            <div class="short-actions">
-                <div class="short-actions-item" *ngFor="let btn of reactBtns">
-                    <div class="short-actions-btn">
-                        <button><mat-icon [svgIcon]="btn.name"></mat-icon></button>
-                    </div>
-                    <div class="short-actions-title"><span *ngIf="btn.title">{{btn.title}}</span></div>
-                </div>
-            </div>
+            <app-short-action [shortActions]="reactBtns"></app-short-action>
             <div class=""></div>
 
         </div>

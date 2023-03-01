@@ -1,0 +1,8 @@
+<div class="short-actions">
+    <div class="short-actions-item" *ngFor="let btn of shortActions">
+        <div class="short-actions-btn">
+            <button><mat-icon [svgIcon]="btn.name"></mat-icon></button>
+        </div>
+        <div class="short-actions-title"><span *ngIf="btn.title">{{btn.title}}</span></div>
+    </div>
+</div>
