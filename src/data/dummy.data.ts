@@ -223,7 +223,7 @@ export const shorts = [
         infoShort: {
             title: 'Chị em sắp thành idol #thobaymau #shorts',
             thumbnail:
-                'https://yt3.ggpht.com/nUn1DIIVQtqxdI5ubE_O8VhmT38NTA_7vIhS__sZsJfunY1uheawMvatoP9WMKu9nF8thJHK1g=s68-c-k-c0x00ffffff-no-rj',
+                'https://firebasestorage.googleapis.com/v0/b/youtube-clone-377414.appspot.com/o/short%2Fshorts10.jpg?alt=media&token=85569170-e146-485f-9358-f2013b8de420',
             briefDes: 'Chị em sắp thành idol #thobaymau #shorts',
             timePost: '1 năm trước',
             viewCount: '16 N lượt xem',

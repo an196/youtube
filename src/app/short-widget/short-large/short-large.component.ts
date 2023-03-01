@@ -1,6 +1,7 @@
 import { Component, Input, ViewChild, OnInit, AfterViewInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { isDevMode } from '@angular/core';
 import { Short } from 'app/shared/interface/short.interface';
 import { IconService } from 'app/shared/services/icon.service';
 import { icons, reactBtns } from './icon-element';
@@ -18,7 +19,7 @@ export class ShortLargeComponent implements OnInit, AfterViewInit {
 
   videoUrl: SafeResourceUrl = '';
   isMuted: boolean = false;
-  isPlay: boolean = false;
+  isPlay: boolean = true;
   reactBtns = reactBtns;
   _idVideo!: string | null;
 
@@ -34,11 +35,10 @@ export class ShortLargeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    if (this.shortVideo) {
-      let videoControl = this.shortVideo.nativeElement;
-      videoControl.muted = 'muted';
-    }
-
+    // if (isDevMode() && this.shortVideo) {
+    //   let videoControl = this.shortVideo.nativeElement;
+    //   videoControl.muted = 'muted';
+    // }
   }
 
   toggleMuted() {
