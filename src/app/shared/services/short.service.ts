@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Video } from '../interface/video.interface';
+import { Short } from '../interface/short.interface'; 
 import { map, Observable } from 'rxjs';
 import { environment } from 'environments/environment';
 import { isDevMode } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
-export class VideoService {
-    private readonly apiUrl: string = (isDevMode() ? environment.localUrl2 : environment.secondUrl) + '/video';
+export class ShortService {
+    private readonly apiUrl: string = (isDevMode() ? environment.localUrl2 : environment.secondUrl) + '/short';
    
     headers!: HttpHeaders;
     
@@ -20,10 +20,12 @@ export class VideoService {
         .set('X-Custom-Header', 'youtube')
     }
 
-    getVideos(size: number = 10): Observable<Video[]> {
-     
-        return this.http.get<Video[]>(`${this.apiUrl}`, {headers: this.headers});
+    getShorts(size: number = 10): Observable<Short[]> {
+        return this.http.get<Short[]>(`${this.apiUrl}`, {headers: this.headers});
       }
     
+      getShortById(id: string): Observable<Short[]> {
+        return this.http.get<Short[]>(`${this.apiUrl}/${id}`, {headers: this.headers});
+      }
    
 }

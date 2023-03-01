@@ -2,13 +2,8 @@
     <div class="primary-inner">
         <div class="player">
             <div class="player-media" #playerMedia>
-                <!-- <img src="https://i.ytimg.com/vi/Vi_kXNcXolY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDpdRsbjzkxnpZCiKwwZ2aACjJvrg" alt=""> -->
-                <!-- <vg-player>
-                    <video autoplay #media [vgMedia]="$any(media)" id="singleVideo" preload="auto" [src]="source" controls>
-        
-                    </video>
-                </vg-player> -->
                 <iframe
+                    modestbranding
                     width="100%"
                     [height]="heightMediaFrame"
                     [src]="videoUrl"
@@ -19,7 +14,8 @@
                     webkitallowfullscreen="webkitallowfullscreen"
                     frameboreder="0"
                     allow="accelerometer"
-                    autoplay="clipboard-write;encrypted-media; gyroscope;picture-in-picture">
+                    autoplay="clipboard-write;encrypted-media; gyroscope;picture-in-picture"
+                    >
                 </iframe>
             </div>
         </div>

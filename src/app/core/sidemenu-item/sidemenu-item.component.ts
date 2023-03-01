@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { resgiteryIcons } from './sidemenu-icon';
 import { IconService } from 'app/shared/services/icon.service';
 
@@ -10,10 +9,15 @@ import { IconService } from 'app/shared/services/icon.service';
 })
 export class SidemenuItemComponent implements OnInit {
     @Input() menus: any = [];
+    @Output() currentMenuEvent = new EventEmitter<string>();
 
     constructor( iconService: IconService) {
         iconService.registerIcons(resgiteryIcons);
     }
 
     ngOnInit(): void { }
+
+    changeMenu(value: string) {
+        this.currentMenuEvent.emit(value);
+    }
 }

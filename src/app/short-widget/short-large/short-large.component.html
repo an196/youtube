@@ -1,0 +1,31 @@
+<section class="short-large-container">
+    <div class="wrapper">
+        <div class="short-card">
+            <div class="short-video">
+                <video #shortVideo id="shortVideo" preload="metadata" muted loop playsinline>
+                    <source
+                        [src]="short.infoShort?.video"
+                        type="video/mp4">
+                </video>
+            </div>
+
+            <div class="short-control">
+                <div class="top-control">
+                    <button class="top-control-pause" (click)="togglePlay()">
+                        <mat-icon [svgIcon]="isPlay ? 'play' : 'pause'"></mat-icon>
+                    </button>
+                    <button class="top-control-speaker" (click)="toggleMuted()"> <mat-icon
+                            [svgIcon]="!isMuted ? 'speaker' : 'speaker-stop'"></mat-icon>
+                    </button>
+                </div>
+
+            </div>
+            <app-bottom-control></app-bottom-control>
+        </div>
+        <div class="short-overlay">
+            <app-short-action [shortActions]="reactBtns"></app-short-action>
+            <div class=""></div>
+
+        </div>
+    </div>
+</section>

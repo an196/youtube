@@ -1,0 +1,89 @@
+$primary: #0f0f0f;
+$primary-text: #f1f1f1;
+
+.short-large-container {
+    width: 100%;
+
+    .wrapper {
+        margin-top: 24px;
+        margin-left: 12px;
+        margin-right: 12px;
+        position: relative;
+
+        .short-card {
+            overflow: hidden;
+            position: relative;
+            min-width: 310px;
+            min-height: 550px;
+            border-radius: 10px;
+            z-index: 10;
+            height: calc(95vh - 72px - 20px);
+            width: calc((95vh - 72px - 20px) * 0.5625);
+
+            .short-video {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                min-width: 320px;
+                min-height: 560px;
+                width: 100%;
+                height: 100%;
+
+                video{
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .short-control {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                padding: 16px 16px 32px 16px;
+
+                .top-control,
+                .bottom-control {
+                    color: $primary-text;
+                }
+
+                .top-control {
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: space-between;
+
+                    button {
+                        border: none;
+                        background: none;
+                        color: $primary-text;
+                        cursor: pointer;
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        .short-overlay {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: calc(100% + 72px);
+            height: 100%;
+            flex: none;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: flex-end;
+
+            @media screen and (max-width: 600px) {
+                width: 100%;
+                padding-bottom: 12px;
+
+                app-short-action{
+                    z-index: 10;
+                }
+            }
+        }
+    }
+}

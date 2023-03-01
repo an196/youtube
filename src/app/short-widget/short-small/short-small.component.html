@@ -1,0 +1,16 @@
+<div class="short-small-container">
+    <a [href]="'auth/shorts/' + short._idShort">
+        <div class="thumbnail">
+            <img [src]="short.infoShort?.thumbnail" alt="">
+        </div>
+    </a>
+    <div class="rich-data">
+        <div class="meta-data">
+            <div class="content-title"><span>{{short.infoShort?.title}}</span></div>
+            <div class="content-info"> <span>361 N lượt xem</span></div>
+        </div>
+        <div class="menu-btn">
+            <mat-icon svgIcon="threedots"></mat-icon>
+        </div>
+    </div>
+</div>

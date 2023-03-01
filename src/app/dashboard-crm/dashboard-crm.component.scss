@@ -30,6 +30,28 @@ $extra-extra-large: 1536px;
         }
     }
 
+    .dashboard-content-short{
+        color: $primary-text;
+        display: flex;
+        flex-direction: row;
+        margin: 24px 16px 24px 24px;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 28px;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+
+        ::ng-deep app-dashcard.ng-star-inserted {
+            display: flex;
+            flex: 1 1 0;
+        }
+
+        .dashboard-content-short-icon{
+            margin-right: 8px;
+        }
+    }
+
     .dashboard-divider {
         margin-left: 24px;
         width: calc(100% - 48px);
